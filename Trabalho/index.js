@@ -32,47 +32,6 @@ app.get('/', (req, res) => {
 
                     // AKI FICA O ESPACO PARA AS REQUISICOES
 
-        // VER INFORMACOES CLIENTES   -   JOSE
-app.get('/cliente/:id', (req, res) => {
-    const id = req.params.id
-    const sql = `SELECT * FROM cliente WHERE id = ${id}`
-
-    conn.query(sql, function(err, data) {
-        if(err) {
-            console.log(err)
-            return
-        }
-
-        const cliente = data[0]
-        res.render('dadosCliente', {layout: false, cliente})
-    })
-})
-        // VER INFORMACOES CLIENTES   -   JOSE
-
-
-        // EDITAR INFORMACOES CLIENTES   -   JOSE
-app.get('/cliente/editarDados/:id', (req, res) => {
-    const id = req.params.id
-    const sql = `UPDATE cliente SET nome = '${nome}', nascimento = '${nascimento}', email = '${email}', telefone = '${telefone}', cpf = '${cpf}', senha = '${senha}' WHERE id = ${id}`
-
-    conn.query(sql, function(err, data) {
-        if(err) {
-            console.log(err)
-            return
-        }
-
-        const cliente = data[0]
-        res.render('editarDados', {layout: false, cliente})
-    })
-})
-        // EDITAR INFORMACOES CLIENTES   -   JOSE
-
-
-
-
-
-
-
 
 
 

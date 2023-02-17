@@ -1,5 +1,5 @@
 const express = require('express')                          /*npm i express*/
-const mysql = require('mysql')                              /*npm */
+const mysql = require('mysql')                              /*npm i mysql*/
 const exphbs = require('express-handlebars')                /*npm */
 const { irregular } = require('i/lib/inflections')
 

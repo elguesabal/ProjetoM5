@@ -1,7 +1,7 @@
 # CODIGOS PARA USAR ANTES DE RODAR O SERVIDOR
 
-npm init
-npm i express
-npm i mysql
-npm install --save-dev
+npm init  <br/>
+npm i express  <br/>
+npm i mysql  <br/>
+npm install --save-dev  <br/>
 npm i handlebars

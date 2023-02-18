@@ -1,0 +1,35 @@
+<form action="/cliente/edit" method="post">
+
+
+    <input type="hidden" name="cpf" value="{{cliente.cpf}}" />
+
+
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" value="{{cliente.nome}}" />
+    <br>
+    <br>
+
+    <label for="nascimento">Nascimento:</label>
+    <input type="text" name="nascimento" value="{{cliente.nascimento}}" />
+    <br>
+    <br>
+
+    <label for="email">E-mail:</label>
+    <input type="text" name="email" value="{{cliente.email}}" />
+    <br>
+    <br>
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" name="telefone" value="{{cliente.telefone}}" />
+    <br>
+    <br>
+
+    <label for="senha">Senha:</label>
+    <input type="text" name="senha" value="{{cliente.senha}}" />
+    <br>
+    <br>
+
+
+    <input type="submit" />
+
+</form>

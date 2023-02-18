@@ -205,7 +205,6 @@ app.get('/medico/excluir/:id', (req, res) => {
 // page login
 app.get('/loginP', (req, res) => {
     res.render('loginP', { layout: false })
-
 })
 
 // CADASTRAR PACIENTE   -   JOSE
@@ -237,6 +236,7 @@ app.post('/novoCliente', (req, res) => {
 // VER INFORMACOES PACIENTE   -   JOSE
 app.post('/cliente', (req, res) => {
     const cpf = req.body.cpf
+    const senha = req.body.senha
 
     const sql = `SELECT * FROM paciente WHERE cpf = '${cpf}'`
 
@@ -248,10 +248,13 @@ app.post('/cliente', (req, res) => {
 
 
         const cliente = data[0]
+
         if (cliente == undefined) {
-            res.redirect('/')
-        } else {
+            res.redirect('/loginP')
+        } if (cliente.senha == senha) {
             res.redirect(`/cliente/${cpf}`)
+        } else {
+            res.redirect(`/loginP`)
         }
     })
 })

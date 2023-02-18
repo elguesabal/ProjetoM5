@@ -1,0 +1,45 @@
+<h1>Editar cliente</h1>
+
+<hr>
+
+<form action="/medico/update" method="post">
+
+    <div>
+
+        <input type="hidden" name="id" id="id" value="{{editarmedico.id}}">
+
+    </div>
+
+    <div>
+
+        <label for="nome">Nome completo:</label>
+        <input type="text" name="nome" value="{{editarmedico.nome}}">
+
+    </div>
+
+    <div>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" value="{{editarmedico.cpf}}">
+
+    </div>
+
+    <div>
+
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" value="{{editarmedico.email}}">
+
+    </div>
+
+
+    <div>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" value="{{editarmedico.telefone}}">
+
+    </div>
+
+
+    <input type="submit" value="Editar">
+
+</form>

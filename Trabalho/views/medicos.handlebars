@@ -1,0 +1,13 @@
+<h1>Medicos</h1>
+
+<div>
+
+    {{#each listar}}
+
+    <strong> #{{this.id}} </strong> -
+
+    <a href="/medicos/{{this.id}}">{{nome}}</a> / {{email}} / {{telefone}} / {{cpf}} <br>
+
+    {{/each}}
+    
+</div>

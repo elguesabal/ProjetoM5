@@ -246,7 +246,13 @@ app.post('/cliente', (req, res) => {
             return
         }
 
-        res.redirect(`/cliente/${cpf}`)
+
+        const cliente = data[0]
+        if (cliente == undefined) {
+            res.redirect('/')
+        } else {
+            res.redirect(`/cliente/${cpf}`)
+        }
     })
 })
 

@@ -1,17 +1,6 @@
-/*  DEPENDENCIAR PARA INSTALAR ANTES DE RODAR O SERVIDOR
-npm init
-npm i express
-npm i mysql
-npm install --save-dev
-npm i handlebars
-*/
-
-
-
 const express = require('express')
 const mysql = require('mysql')
 const exphbs = require('express-handlebars')
-const { irregular } = require('i/lib/inflections')
 
 const port = 3000
 

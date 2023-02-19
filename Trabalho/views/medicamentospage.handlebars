@@ -1,0 +1,75 @@
+{{!-- pagina inicial do formulário --}}
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Entidade1</title>
+  </head>
+  <body>
+<header>
+   <center><h1>Medicamentos</h1> 
+     <a href="http://localhost:4000/" >Voltar</a> 
+    <hr /> </center>
+</header>
+<center>
+
+<main>
+    <form action="medicamentos/receber" method="post">
+
+      <div class="form-control">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Nome do medicamento" />
+      </div>
+
+      <div class="form-control">
+
+        <label for="dosagem">Dosagem:</label>
+        <input type="text" name="dosagem" placeholder="Insira a dosagem" />
+
+      </div>
+
+        <div class="form-control">
+
+        <label for="composicao">Composição:</label>
+        <input type="text" name="composicao" placeholder="Insira a composição" />
+
+      </div>
+
+
+      <div class="form-control">
+
+        <label for="comprimidos">Comprimidos:</label>
+        <input type="text" name="comprimidos" placeholder="Insira a quantidade de comprimidos" />
+
+      </div>
+
+      <div class="form-control">
+
+        <label for="preço">Preço:</label>
+        <input type="text" name="preco" placeholder="Insira o preço" />
+
+      </div>
+      <br>
+      <input type="submit" />
+      
+
+
+<p><a href="/busca{{listarMed.id}}" > Buscar</a> </p>
+ <p><a href="/medicamentos{{listarMed.id}}" > Exibir</a> </p>
+  
+</center>
+
+</main>
+
+<footer></footer>
+  </body>
+
+
+
+
+
+  
+</html>

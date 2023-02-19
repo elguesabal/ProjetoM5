@@ -1,0 +1,19 @@
+{{!-- Lista de dados dos medicamentos --}}
+
+<center>
+<h1>Dados dos medicamentos</h1>
+  <a href="/medicamentos/">Voltar</a>
+         
+<h2> {{listarMed.nome}} </h2>
+
+<p>Dosagem: {{listarMed.dosagem}} </p>
+<p>Composição: {{listarMed.composicao}} </p>
+<p>Comprimidos: {{listarMed.comprimidos}} </p>
+<p>Preço: {{listarMed.preco}} </p>
+
+
+<a href="/med/edit/{{listarMed.id}}">Editar</a>
+
+<a href="/med/remove/{{listarMed.id}}" > Excluir</a>
+
+</center>

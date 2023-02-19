@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Fev-2023 às 03:07
+-- Tempo de geração: 19-Fev-2023 às 23:47
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `clinica_resilia`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `medicamentos`
+--
+
+CREATE TABLE `medicamentos` (
+  `id` int(15) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `dosagem` varchar(40) NOT NULL,
+  `composicao` varchar(30) NOT NULL,
+  `comprimidos` varchar(30) NOT NULL,
+  `preco` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `medicamentos`
+--
+
+INSERT INTO `medicamentos` (`id`, `nome`, `dosagem`, `composicao`, `comprimidos`, `preco`) VALUES
+(1, 'Concerta', '36mg', 'mg', '30', 'R$ 274,65'),
+(2, 'Cloridrato de Fluoxetina ', '20 mg', 'mg', '30', 'R$16,54'),
+(3, 'Frontal Alprazolam', '0,5 mg', 'Mg', '30', 'R$ 53,01'),
+(4, 'Histadin D Loratadina', '5 mg/120mg', 'mg', '12', 'R$43,80'),
+(5, 'Dorflex', '300mg + 35mg + 50mg', 'mg', '36', 'R$ 17,68'),
+(6, 'Metilfenidato (Ritalina)', '10mg', 'mg', '60', 'R$88,69'),
+(7, 'Ibuprofeno', '400 mg', 'Mg', '10', 'R$ 21,99'),
+(8, 'Propranolol ', '40 mg', 'mg', '60', 'R$ 20,00');
 
 -- --------------------------------------------------------
 
@@ -75,6 +104,12 @@ INSERT INTO `paciente` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, 
 --
 
 --
+-- Índices para tabela `medicamentos`
+--
+ALTER TABLE `medicamentos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `medico`
 --
 ALTER TABLE `medico`
@@ -89,6 +124,12 @@ ALTER TABLE `paciente`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `medicamentos`
+--
+ALTER TABLE `medicamentos`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `medico`

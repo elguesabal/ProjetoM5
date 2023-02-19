@@ -359,4 +359,181 @@ conn.connect(function (err) {
 
 app.listen(port, () => {
     console.log(`app rodando na porta ${port}`);
+
+
+
+
+
+// DAQUI PARA BAIXO É O CAMPO DE MEDICAMENTOS (RAFAEL)
+
+//PAGE DE MEDICAMENTOS COM FORMULÁRIO
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
+
+
+app.use(express.static('public'))
+
+
+app.get('/medicamentospage', (req, res) => {
+    res.render('medicamentospage', {layout: false})
+
+})
+
+app.use(
+    express.urlencoded({extended: true})
+)
+
+//INSERIR INFORMAÇÕES
+app.post('/medicamentos/receber',(req, res) => {
+    const nome = req.body.nome
+    const dosagem = req.body.dosagem
+    const composicao = req.body.composicao
+    const comprimidos = req.body.comprimidos
+    const preco = req.body.preco
+    const sql = `INSERT INTO medicamentos (nome, dosagem, composicao, comprimidos, preco) VALUES ('${nome}', '${dosagem}', '${composicao}', '${comprimidos}', '${preco}')`
+
+    conn.query(sql, function(err) {
+        if (err) {
+            console.log(err)
+        }
+
+        res.redirect('/')
+        console.log('Dados cadastrado com sucesso')
+    })
+})
+
+
+//GET PARA LISTAGEM DOS MEDICAMENTOS
+app.get('/medicamentos', (req, res) => {
+    const sql = 'SELECT * FROM medicamentos'
+
+    conn.query(sql, function(err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listar = data
+
+        console.log(listar)
+//res render... é para renderizar o handlebars
+        res.render('exibir', {layout: false, listar})
+    })
+})
+
+
+
+//CONSULTA DOS MEDICAMENTOS POR ID
+app.get('/medicamentos/edit/:id', (req, res) => {
+    const id = req.params.id
+
+    const sql = `SELECT * FROM medicamentos WHERE id = ${id}`
+
+    conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const listarMed = data[0]
+        res.render('getmed', {  layout: false, listarMed } )
+
+    })
+})
+
+
+//PUXANDO OS REGISTROS PARA EDIÇÃO
+app.get('/med/edit/:id', (req, res) => {
+    const id = req.params.id
+    
+    const sql = `SELECT * FROM medicamentos where id = ${id}`
+        
+    
+    conn.query(sql, function(err,data){
+    if(err){
+        console.log(err)
+            return
+        }
+        
+        const medicamentos = data[0]
+        res.render('edit', {layout: false, medicamentos } )
+    })
+
+})
+
+
+
+
+//EDIÇÃO DE REGISTROS COM POST
+app.post('/updatemed', (req,res) => {
+  
+    const id = req.body.id
+    const nome = req.body.nome
+    const dosagem = req.body.dosagem
+    const composicao= req.body.composicao
+    const comprimidos = req.body.comprimidos
+    const preco = req.body.preco
+    const sql = `UPDATE medicamentos SET nome = '${nome}', dosagem = '${dosagem}', composicao =  '${composicao}', comprimidos = '${comprimidos}', preco = '${preco}' WHERE id = '${id}' `
+    
+    conn.query(sql, function(err) {
+        if (err){
+            console.log(err)
+        }
+    
+        res.redirect('/medicamentos')
+        console.log("alterado com sucesso")
+        
+    
+      })
+    })
+    
+
+
+    //rota para busca
+app.get('/busca', (req, res) => {
+    res.render('busca', { layout: false })
+
+})
+
+//ROTA DE BUSCA (busc)
+
+
+app.post('/busc/', (req, res) => {
+    const id = req.body.id
+    
+    const sql = `SELECT * FROM medicamentos where id = ${id}`
+
+    conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const listarMed = data[0]
+        res.render('/exibir', {  layout: false, listarMed } )
+
+    })
+})
+
+//REQUISIÇÃO PARA REMOÇÃO DE MEDICAMENTOS
+app.get('/med/remove/:id', (req,res) => {
+    const id = req.params.id
+    
+    const sql = `DELETE FROM medicamentos WHERE id = ${id}`
+
+    conn.query(sql, function(err){
+        if(err){
+            console.log(err)
+            return
+        }
+    
+        res.redirect('/medicamentos')
+        console.log("Delete com sucesso")
+    })
+})
+
+
+//lembrar que toda vez que algum registro por deletado, o auto incremento vai continuar seguindo com a numeração, por conta de "registro vazio"
+//Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
+// FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
 })

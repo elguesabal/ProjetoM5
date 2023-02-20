@@ -197,7 +197,7 @@ app.get('/medico/excluir/:id', (req, res) => {
 // fim das rotas dos medicos(Bruno)
 
 
-//Inicio da rota da receita (Otavio)
+//Inicio da rota da prescrição (Otavio)
 
 app.get('/receitaCad', (req, res) => {
     res.render('receitaCad', { layout: false })
@@ -321,7 +321,7 @@ app.get('/receita/remove/:id', (req, res) =>{
 })
 
 
-
+//Inicio da rota da prescrição (Otavio)
 
 
 

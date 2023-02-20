@@ -476,11 +476,6 @@ app.get('/cliente/excluir/:cpf', (req, res) => {
 // DAQUI PARA BAIXO É O CAMPO DE MEDICAMENTOS (RAFAEL)
 
 //PAGE DE MEDICAMENTOS COM FORMULÁRIO
-app.engine('handlebars', exphbs.engine())
-app.set('view engine', 'handlebars')
-
-
-app.use(express.static('public'))
 
 
 app.get('/medicamentospage', (req, res) => {
@@ -526,7 +521,7 @@ app.get('/medicamentos', (req, res) => {
 
         console.log(listar)
         //res render... é para renderizar o handlebars
-        res.render('exibir', { layout: false, listar })
+        res.render('exibir(medicamentos)', { layout: false, listar })
     })
 })
 
@@ -545,7 +540,7 @@ app.get('/medicamentos/edit/:id', (req, res) => {
         }
 
         const listarMed = data[0]
-        res.render('getmed', { layout: false, listarMed })
+        res.render('getmed(medicamentos)', { layout: false, listarMed })
 
     })
 })
@@ -565,7 +560,7 @@ app.get('/med/edit/:id', (req, res) => {
         }
 
         const medicamentos = data[0]
-        res.render('edit', { layout: false, medicamentos })
+        res.render('edit(medicamentos)', { layout: false, medicamentos })
     })
 
 })
@@ -598,28 +593,27 @@ app.post('/updatemed', (req, res) => {
 
 
 
-//rota para busca
-app.get('/busca', (req, res) => {
-    res.render('busca', { layout: false })
+ //ROTA DE BUSCA
+ app.get('/busca', (req, res) => {
+    res.render('busca(medicamentos)', { layout: false })
 
 })
 
-//ROTA DE BUSCA (busc)
-
+//ROTA DO BUSC
 
 app.post('/busc/', (req, res) => {
     const id = req.body.id
 
     const sql = `SELECT * FROM medicamentos where id = ${id}`
 
-    conn.query(sql, function (err, data) {
-        if (err) {
+    conn.query(sql, function(err, data){
+        if(err){
             console.log(err)
             return
         }
 
-        const listarMed = data[0]
-        res.render('/exibir', { layout: false, listarMed })
+        const listarMed = data [0]
+        res.render('getmed(medicamentos)', {  layout: false, listarMed } )
 
     })
 })
@@ -685,3 +679,4 @@ app.listen(port, () => {
     //Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
     // FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
 })
+

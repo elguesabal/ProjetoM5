@@ -1,0 +1,32 @@
+{{!-- Medicamentos cadastrados --}}
+
+<header>
+
+
+    <center>
+
+        <h1>Medicamentos cadastrados</h1>
+       <p><a href="/medicamentospage" > Voltar</a> </p>
+    </center>
+    <hr>
+
+</header>
+
+<main>
+    <center>
+<div class="medicamentosContainer">
+    {{#each listar}}
+
+    <strong> #{{this.id}} </strong> -
+    <a href="/medicamentos/edit/{{this.id}}">{{nome}}</a> 
+    <p> Dosagem: {{dosagem}},
+     Composição: {{composicao}},
+     Comprimidos: {{comprimidos}},
+     Preço: {{preco}} </p> <br>
+
+    {{/each}}
+
+
+</div>
+</center>
+</main>

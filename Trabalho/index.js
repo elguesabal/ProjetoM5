@@ -197,6 +197,129 @@ app.get('/medico/excluir/:id', (req, res) => {
 // fim das rotas dos medicos(Bruno)
 
 
+//Inicio da rota da receita (Otavio)
+
+app.get('/receitaCad', (req, res) => {
+    res.render('receitaCad', { layout: false })
+
+})
+//receitaCad <-
+app.post('/receita/insertreceita', (req, res) => {
+    const nome = req.body.nome
+    const cpf = req.body.cpf
+    const telefone = req.body.telefone
+    const idade = req.body.idade
+    const data = req.body.data
+    const medico = req.body.medico
+    const remedio = req.body.remedio
+
+    const sql = `INSERT INTO receita (nome,cpf,telefone,idade,data,medico,remedio) VALUES ('${nome}','${cpf}','${telefone}','${idade}','${data}','${medico}','${remedio}')`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+
+        console.log("Cadastro com sucesso!")
+
+        res.redirect('/receita')
+
+    })
+})
+
+//receita <-
+app.get('/receita', (req, res) => {
+    const sql = 'SELECT * FROM receita'
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err);
+            return
+        }
+
+        const listar = data
+
+        console.log(listar);
+
+        res.render('receita', { layout: false, listar })
+    })
+})
+
+// consulta um registro pelo id
+app.get('/receita/:id', (req, res) => {
+    const id = req.params.id
+
+    const sql = `SELECT * FROM receita WHERE id = ${id}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listarclientes = data[0]
+        res.render('receitaId', { layout: false, listarclientes })
+    })
+})
+
+// pegando para editar registro
+app.get('/receita/editCad/:id', (req, res) => {
+    const id = req.params.id
+
+    const sql = `SELECT * FROM receita where id = ${id}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const editarReceita = data[0]
+        res.render('editCad', { layout: false, editarReceita })
+    })
+})
+
+app.post('/receita/updateReceita', (req, res) => {
+
+    const id = req.body.id
+    const nome = req.body.nome
+    const cpf = req.body.cpf
+    const telefone = req.body.telefone
+    const idade = req.body.idade
+    const data = req.body.data
+    const medico = req.body.medico
+    const remedio = req.body.remedio
+
+    const sql = `UPDATE receita SET nome = '${nome}', cpf = '${cpf}', telefone = '${telefone}'
+    , idade = '${idade}', data = '${data}', medico = '${medico}', remedio = '${remedio}' WHERE id = '${id}'`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+        res.redirect('/receita')
+    })
+
+})
+
+// excluindo o registro
+app.get('/receita/remove/:id', (req, res) =>{
+    const id = req.params.id
+
+    const sql = `DELETE FROM receita WHERE id = '${id}'`
+
+    conn.query(sql, function(err){
+        if(err){
+            console.log(err)
+            return;
+        }
+
+        res.redirect('/receita')
+    })
+
+})
+
 
 
 

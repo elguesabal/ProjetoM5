@@ -245,7 +245,7 @@ app.get('/receita', (req, res) => {
     })
 })
 
-// consulta um registro pelo id
+// consulta a prescrição pelo id
 app.get('/receita/:id', (req, res) => {
     const id = req.params.id
 
@@ -262,7 +262,7 @@ app.get('/receita/:id', (req, res) => {
     })
 })
 
-// pegando para editar registro
+// editando  a prescrição
 app.get('/receita/editCad/:id', (req, res) => {
     const id = req.params.id
 
@@ -303,7 +303,7 @@ app.post('/receita/updateReceita', (req, res) => {
 
 })
 
-// excluindo o registro
+// excluindo a prescrição
 app.get('/receita/remove/:id', (req, res) =>{
     const id = req.params.id
 

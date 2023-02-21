@@ -347,13 +347,14 @@ app.get('/cadastrarP', (req, res) => {
 
 app.post('/novoCliente', (req, res) => {
     const nome = req.body.nome
+    const sobrenome = req.body.sobrenome
     const nascimento = req.body.nascimento
     const email = req.body.email
     const telefone = req.body.telefone
     const cpf = req.body.cpf
     const senha = req.body.senha
 
-    const sql = `INSERT INTO paciente (nome, nascimento, email, telefone, cpf, senha) VALUES ('${nome}', '${nascimento}', '${email}', '${telefone}', '${cpf}', '${senha}')`
+    const sql = `INSERT INTO paciente (nome, nascimento, email, telefone, cpf, senha) VALUES ('${nome} ${sobrenome}', '${nascimento}', '${email}', '${telefone}', '${cpf}', '${senha}')`
 
     conn.query(sql, function (err) {
         if (err) {

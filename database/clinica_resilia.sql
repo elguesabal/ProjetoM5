@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Fev-2023 às 23:47
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Generation Time: Feb 21, 2023 at 03:07 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `clinica_resilia`
+-- Database: `clinica_resilia`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `medicamentos`
+-- Table structure for table `consulta`
+--
+
+CREATE TABLE `consulta` (
+  `id` int(11) NOT NULL,
+  `data` varchar(20) DEFAULT NULL,
+  `horario` varchar(5) DEFAULT NULL,
+  `cliente` varchar(50) DEFAULT NULL,
+  `clientesobre` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `sintomas` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `consulta`
+--
+
+INSERT INTO `consulta` (`id`, `data`, `horario`, `cliente`, `clientesobre`, `email`, `sintomas`) VALUES
+(4, 'Terça-feira', '16:00', 'ssss', 'ssss', '', 'nao');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicamentos`
 --
 
 CREATE TABLE `medicamentos` (
@@ -37,7 +60,7 @@ CREATE TABLE `medicamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `medicamentos`
+-- Dumping data for table `medicamentos`
 --
 
 INSERT INTO `medicamentos` (`id`, `nome`, `dosagem`, `composicao`, `comprimidos`, `preco`) VALUES
@@ -53,7 +76,7 @@ INSERT INTO `medicamentos` (`id`, `nome`, `dosagem`, `composicao`, `comprimidos`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `medico`
+-- Table structure for table `medico`
 --
 
 CREATE TABLE `medico` (
@@ -67,7 +90,7 @@ CREATE TABLE `medico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `medico`
+-- Dumping data for table `medico`
 --
 
 INSERT INTO `medico` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, `senha`) VALUES
@@ -78,7 +101,7 @@ INSERT INTO `medico` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, `s
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `paciente`
+-- Table structure for table `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -92,7 +115,7 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `paciente`
+-- Dumping data for table `paciente`
 --
 
 INSERT INTO `paciente` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, `senha`) VALUES
@@ -100,45 +123,57 @@ INSERT INTO `paciente` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, 
 (3, 'bruno', '23', 'teste', '76543', '10', '10');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `medicamentos`
+-- Indexes for table `consulta`
+--
+ALTER TABLE `consulta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `medicamentos`
 --
 ALTER TABLE `medicamentos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `medico`
+-- Indexes for table `medico`
 --
 ALTER TABLE `medico`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `paciente`
+-- Indexes for table `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `medicamentos`
+-- AUTO_INCREMENT for table `consulta`
+--
+ALTER TABLE `consulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `medicamentos`
 --
 ALTER TABLE `medicamentos`
   MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de tabela `medico`
+-- AUTO_INCREMENT for table `medico`
 --
 ALTER TABLE `medico`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT de tabela `paciente`
+-- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

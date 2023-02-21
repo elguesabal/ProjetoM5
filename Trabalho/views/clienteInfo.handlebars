@@ -121,35 +121,38 @@
 
                 <div class="col-md-4">
                     <h4 class="mb-3">Marque sua consulta</h4>
-                    <form class="needs-validation" novalidate>
+                 <form action="/marcarConsulta" method="post" class="needs-validation" novalidate>
                         <div class="row g-3">
                             <div class="col-sm-6">
-                                <label for="firstName" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Insira seu nome" value="" required>
+                                <label for="cliente" class="form-label">Nome</label>
+                                <input type="text" class="form-control" name="cliente" id="cliente" placeholder="Insira seu nome"
+                                    value="" required>
                                 <div class="invalid-feedback">
-                                    Por favor insira seu nome.
+                                    Valid first name is required.
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="lastName" class="form-label">Sobrenome</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Insira seu sobrenome" value="" required>
+                                <label for="clientesobre" class="form-label">Sobrenome</label>
+                                <input type="text" class="form-control" name="clientesobre" id="clientesobre" placeholder="Insira seu sobrenome"
+                                    value="" required>
                                 <div class="invalid-feedback">
-                                    Por favor insira seu sobrenome.
+                                    Valid last name is required.
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <label for="email" class="form-label">Email para contato<span class="text-muted">(Optional)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="Insira seu e-mail">
+                                <label for="email" class="form-label">Email para contato<span
+                                        class="text-muted">(Optional)</span></label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Insira seu e-mail">
                                 <div class="invalid-feedback">
-                                    Por favor insira válido.
+                                    Please enter a valid email address for shipping updates.
                                 </div>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="country" class="form-label">Dia da consulta</label>
-                                <select class="form-select" id="country" required>
+                                <label for="data" class="form-label">Dia da consulta</label>
+                                <select class="form-select" name="data" id="data" required>
                                     <option value="">Escolher...</option>
                                     <option value="Segunda-feira">Segunda-feira</option>
                                     <option value="Terça-feira">Terça-feira</option>
@@ -158,13 +161,13 @@
                                     <option value="Sexta-feira">Sexta-feira</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Por favor escolha um dia.
+                                    Please select a valid country.
                                 </div>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="state" class="form-label">Horário</label>
-                                <select class="form-select" id="state" required>
+                                <label for="horario" class="form-label">Horário</label>
+                                <select class="form-select" name="horario"  id="horario" required>
                                     <option value="">Escolher...</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -179,15 +182,16 @@
                                     <option value="18:00">18:00</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Por favor escolha um horário
+                                    Please provide a valid state.
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <label for="zip" class="form-label">Sintomas:</label>
-                                <textarea for="zip" class="form-control" id="zip" placeholder="Descreva seus sintomas..." rows="3" required></textarea>
+                                <label for="sintomas" class="form-label">Sintomas:</label>
+                                <textarea for="sintomas" class="form-control" name="sintomas" id="sintomas"
+                                    placeholder="Descreva seus sintomas..." rows="3" required></textarea>
                                 <div class="invalid-feedback">
-                                    Por favor descreva seus sintomas.
+                                    Zip code required.
                                 </div>
                             </div>
                         </div>
@@ -198,6 +202,7 @@
                     </form>
                 </div>
             </div>
+
 
 
             <hr class="col-3 col-12 mb-5">

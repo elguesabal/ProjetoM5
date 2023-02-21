@@ -428,13 +428,14 @@ app.get('/cliente/editar/:cpf', (req, res) => {
 
 app.post('/cliente/edit', (req, res) => {
     const nome = req.body.nome
+    const sobrenome = req.body.sobrenome
     const nascimento = req.body.nascimento
     const email = req.body.email
     const telefone = req.body.telefone
     const cpf = req.body.cpf
     const senha = req.body.senha
 
-    const sql = `UPDATE paciente SET nome = '${nome}', nascimento = '${nascimento}', email = '${email}', telefone = '${telefone}', senha = '${senha}' WHERE cpf = '111111'`
+    const sql = `UPDATE paciente SET nome = '${nome} ${sobrenome}', nascimento = '${nascimento}', email = '${email}', telefone = '${telefone}', WHERE cpf = '${cpf}'`
 
     conn.query(sql, function (err) {
         if (err) {

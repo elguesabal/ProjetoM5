@@ -637,6 +637,28 @@ app.get('/med/remove/:id', (req, res) => {
 
 
 
+//Marcar consulta (Manoel)
+app.post('/marcarConsulta', (req, res) => {
+    const cliente = req.body.cliente
+    const clientesobre = req.body.clientesobre
+    const email = req.body.email
+    const data = req.body.data
+    const horario = req.body.horario
+    const sintomas = req.body.sintomas
+    const sql = `INSERT INTO consulta (cliente, clientesobre, email,data, horario, sintomas) VALUES ('${cliente}','${clientesobre}','${email}','${data}','${horario}','${sintomas}')`
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
+
+        console.log("Consulta marcada!")
+        res.redirect('/cliente/:cpf')
+    })
+
+})
+
+
+
 
 
 

@@ -1,0 +1,24 @@
+<h1>Exames Marcados</h1>
+<link rel='stylesheet' href='/style.css' />
+
+
+<div class="container">
+    {{#each listar}}
+
+    {{!-- <strong> #{{this.id}}</strong> - --}}
+    <a href="/exames/{{this.id}}"><strong> #{{this.id}}</strong></a> 
+    {{exame}} 
+    <br> 
+    {{paciente}} 
+    <br> 
+    {{medico}} 
+    <br> 
+    {{data}} 
+    <br>
+    {{horario}}
+    <br>
+
+    {{/each}}
+</div>
+<hr>
+<a href="/">Home</a>

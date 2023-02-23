@@ -1,0 +1,69 @@
+<h1>Marcar Exames</h1>
+<link rel='stylesheet' href='/style.css' />
+
+<hr>
+
+<div class="container">
+<form action="/marcar_exames/" method="post">
+
+     <div class="form-control">
+          <input type="hidden" name="id" id="id" value="{{exames.id}}">
+          <label for="exame">Nome do exame:</label>
+          <input list="exames" name="exame" placeholder="Escolha uma opção">
+          <datalist id="exames">
+               <option value="Hemograma">
+               <option value="Glicemia em Jejum">
+               <option value="Colesterol e triglicerídeos">
+               <option value="Ureia e Creatina">
+               <option value="TGO (AST) E TGP (ALT)">
+               <option value="TSH E T4 LIVRE">
+               <option value="Ácido Úrico">
+               <option value="Exames de urina">
+               <option value="Eletrocardiograma">
+               <option value="Teste ergométrico">
+               <option value="Ecocardiograma">        
+  </datalist>
+     </div>
+
+     <hr>
+
+     <div class="form-control">
+
+          <label for="medico">Nome Médico:</label>
+          <input type="text" name="medico" placeholder="Nome do médico">
+
+     </div>
+
+     <hr>
+
+     <div class="form-control">
+
+          <label for="paciente">Nome Paciente:</label>
+          <input type="text" name="paciente" placeholder="Nome do paciente">
+
+     </div>
+
+     <hr>
+
+     <div class="form-control">
+
+          <label for="data">Data:</label>
+          <input type="date" name="data" placeholder="Data">
+
+     </div>
+
+     <div class="form-control">
+
+          <label for="horario">Horário:</label>
+          <input type="time" name="horario" placeholder="Horário">
+     </div>
+
+     <hr>
+
+     <input type="submit" value="Enviar">
+
+
+</form>
+</div>
+<hr>
+<a href="/">Home</a>

@@ -28,6 +28,22 @@ app.use(
 )
 
 
+// rotas dos exames (Maiara)
+//rota index_exames
+app.get('/', function (req, res) {
+    res.render('index_exames', { layout: false })
+})
+// rota de cadastro
+app.get('/marcar_exames/', function (req, res) {
+    res.render('marcar_exames', { layout: false })
+})
+// rota de busca
+app.get('/busca_exames/', (req, res) => {
+    res.render('busca_exames', { layout: false })
+})
+//fim das rotas dos exames (Maiara)
+
+
 // rotas para o medico (Bruno)
 
 app.get('/home', (req, res) => {
@@ -659,20 +675,131 @@ app.post('/marcarConsulta', (req, res) => {
 
 })
 
+//inicio da parte dos exames (Maiara)
 
+// inserir dados (marcar exame)
+app.post('/marcar_exames/', (req, res) => {
+    const id = req.body.id
+    const exame = req.body.exame
+    const medico = req.body.medico
+    const paciente = req.body.paciente
+    const data = req.body.data
+    const horario = req.body.horario
 
+    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}')`
 
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+        }
 
+        res.redirect('/')
+        console.log("Exame marcado com sucesso!")
+    })
+})
 
+//rota de busca (buscando) que envia para view exame.handlebars
+app.post('/buscando/', (req, res) => {
+    const id = req.body.id
+    
+    const sql = `SELECT * FROM exames WHERE id = ${id}`
 
+    conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
 
+        res.redirect(`/exames/${id}`)
+        console.log("Exame encontrado com sucesso!")
+    })
+})
 
+//consultar dados (busca todos os exames)
+app.get('/exames/', (req, res) => {
+    const sql = 'SELECT * FROM exames'
+    
+    conn.query(sql, function (err, data){
+        if (err) {
+            console.log(err)
+            return
+        }
+        const listar = data
 
+        console.log(listar)
 
+        res.render('exames', { layout: false, listar })
+    })
+})
 
+//consultar pelo id um exame marcado (exame.handlebars)
+app.get('/exames/:id', (req, res) => {
+    const id = req.params.id
+    
+    const sql = `SELECT * FROM exames WHERE id = ${id}`
+    
+    conn.query(sql, function (err, data){
+        if (err) {
+        console.log(err)
+        return
+        }
+        const listarexames = data[0]
+        res.render('exame', { layout: false, listarexames })
+    })
+})
 
+//editar exame marcado
+app.get('/exames/edit_exames/:id', (req, res) => {
+    const id = req.params.id
+    const sql = `SELECT * FROM exames WHERE id = ${id}`
 
+    conn.query(sql, function (err, data){
+        if (err) {
+        console.log(err)
+        return
+        }
+        const editarexame = data[0]
+        res.render('edit_exames', { layout: false, editarexame })
+    })
+})
 
+//editar exame com Post
+app.post('/upexame', (req, res) => {
+    const id = req.body.id
+    const exame = req.body.exame
+    const medico = req.body.medico
+    const paciente = req.body.paciente
+    const data = req.body.data
+    const horario = req.body.horario
+    
+    
+    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
+    
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        res.redirect('/exames')
+        console.log("Editado com sucesso!")
+    })
+})
+
+//deletar exame marcado
+app.get('/exames/remove/:id', (req, res) => {
+    const id = req.params.id
+    const sql = `DELETE FROM exames WHERE id = ${id}`
+
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+    }
+    res.redirect('/exames')})
+    console.log("Deletado com sucesso!")
+})
+//Fim da parte dos exames (Maiara)
 
 // conexão bd
 const conn = mysql.createConnection({

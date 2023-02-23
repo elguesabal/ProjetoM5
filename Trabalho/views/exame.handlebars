@@ -1,0 +1,26 @@
+<h1>Exames pelo ID</h1>
+<link rel='stylesheet' href='/style.css' />
+
+<div class="container">
+
+<h2> O id dessa marcação é: {{listarexames.id}}</h2>
+
+<h3> O nome desse exame é: {{listarexames.exame}} </h3>
+
+<p>O nome do médico é: {{listarexames.medico}}</p>
+
+<p>O nome do paciente é: {{listarexames.paciente}}</p>
+
+<p>Esse exame foi marcado para a data: {{listarexames.data}}</p>
+
+<p>Esse exame foi marcado para o horário: {{listarexames.horario}}</p>
+
+</div>
+<a href="/exames/edit_exames/{{listarexames.id}}">Editar</a>
+<hr>
+<a href="/exames/remove/{{listarexames.id}}">Excluir</a>
+<hr>
+<a href="/busca_exames/">Buscar</a>
+<hr>
+<a href="/">Home</a>
+

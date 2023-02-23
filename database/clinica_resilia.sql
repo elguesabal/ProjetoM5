@@ -140,6 +140,28 @@ CREATE TABLE `receita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Estrutura da tabela `exames`
+--
+
+CREATE TABLE `exames` (
+  `id` int(11) NOT NULL,
+  `exame` varchar(100) DEFAULT NULL,
+  `medico` varchar(100) DEFAULT NULL,
+  `paciente` varchar(100) DEFAULT NULL,
+  `data` varchar(10) DEFAULT NULL,
+  `horario` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `exames`
+--
+
+INSERT INTO `exames` (`id`, `exame`, `medico`, `paciente`, `data`, `horario`) VALUES
+(9, 'Hemograma', 'Dr. Lampião', 'Maria Bonita', '2023-02-28', '15:50:00'),
+(10, 'Hemograma', 'Dra. Maria Bonita', 'Lampião', '2023-03-02', '16:00:00');
+
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -172,6 +194,12 @@ ALTER TABLE `paciente`
 --
 ALTER TABLE `receita`
   ADD PRIMARY KEY (`id`);
+
+  -- Índices para tabela `exames`
+--
+ALTER TABLE `exames`
+  ADD PRIMARY KEY (`id`);
+
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -206,6 +234,12 @@ ALTER TABLE `paciente`
 --
 ALTER TABLE `receita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+-- AUTO_INCREMENT de tabela `exames`
+--
+ALTER TABLE `exames`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

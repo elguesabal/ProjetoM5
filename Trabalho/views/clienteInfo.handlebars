@@ -24,6 +24,7 @@
             <span class="fs-4">Seja bem vindo {{cliente.nome}}</span>
         </div>
 
+   
         <main>
 
             <div class="row g-5 d-flex justify-content-evenly">
@@ -127,7 +128,8 @@
                                 <label for="cliente" class="form-label">Nome</label>
                                 <input type="text" class="form-control" name="cliente" id="cliente" placeholder="Insira seu nome" value="" required>
                                 <div class="invalid-feedback">
-                                    Valid first name is required.
+
+                                    Por favor insira seu nome.
                                 </div>
                             </div>
 
@@ -135,8 +137,8 @@
                                 <label for="clientesobre" class="form-label">Sobrenome</label>
                                 <input type="text" class="form-control" name="clientesobre" id="clientesobre" placeholder="Insira seu sobrenome" value="" required>
                                 <div class="invalid-feedback">
-                                    Valid last name is required.
-                                </div>
+                                    Por favor insira seu sobrenome.                             
+                                       </div>
                             </div>
 
                             <div class="col-12">
@@ -158,7 +160,7 @@
                                     <option value="Sexta-feira">Sexta-feira</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please select a valid country.
+                                    Por favor insira uma data.
                                 </div>
                             </div>
 
@@ -179,7 +181,7 @@
                                     <option value="18:00">18:00</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid state.
+                                    Por favor insira um horário.
                                 </div>
                             </div>
 
@@ -187,7 +189,7 @@
                                 <label for="sintomas" class="form-label">Sintomas:</label>
                                 <textarea for="sintomas" class="form-control" name="sintomas" id="sintomas" placeholder="Descreva seus sintomas..." rows="3" required></textarea>
                                 <div class="invalid-feedback">
-                                    Zip code required.
+                                    Por favor insira seu sintomas.
                                 </div>
                             </div>
                         </div>
@@ -305,4 +307,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/public/javascript/checkout.js"></script>
 </html>

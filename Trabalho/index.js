@@ -30,7 +30,7 @@ app.use(
 
 // rotas dos exames (Maiara)
 //rota index_exames
-app.get('/', function (req, res) {
+app.get('/index_exames', function (req, res) {
     res.render('index_exames', { layout: false })
 })
 // rota de cadastro

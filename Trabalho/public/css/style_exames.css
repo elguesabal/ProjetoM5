@@ -1,0 +1,27 @@
+body {
+    background: url(./src/background.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #0af5fd;
+    border-radius: 50px;
+    /* box-shadow: 18px 18px 22px 0px rgb(5, 134, 151); sombra para fora */
+    box-shadow: inset 16px 15px 22px 0px rgb(5 134 151);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(5, 134, 151);
+    text-shadow: -3px 0px 5px rgb(6, 134, 151);
+}

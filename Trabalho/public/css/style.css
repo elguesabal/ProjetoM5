@@ -57,14 +57,7 @@
 /* PAGINA PRINCIPAL - JOSE*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-teste {
+.containerRefri {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +65,7 @@ teste {
   min-height: 100vh;
 }
 
-.card {
+.cardRefri {
   position: relative;
   width: 300px;
   height: 350px;
@@ -85,12 +78,12 @@ teste {
   align-items: center;
 }
 
-.card:hover {
+.cardRefri:hover {
   width: 600px;
   transition-delay: 0s;
 }
 
-.card .circle {
+.cardRefri .circle {
   position: absolute;
   top: 0;
   left: 0;
@@ -103,7 +96,7 @@ teste {
   align-items: center;
 }
 
-.card .circle::before {
+.cardRefri .circle::before {
   content: '';
   position: absolute;
   top: 0;
@@ -115,18 +108,18 @@ teste {
   transition: 0.5s;
 }
 
-.card:hover .circle::before {
+.cardRefri:hover .circle::before {
   clip-path: circle(400px at center);
 }
 
-.card .circle .logo {
+.cardRefri .circle .logo {
   position: relative;
   width: 200px;
   transition: 0.5s;
   transition-delay: 0.5s;
 }
 
-.card:hover .circle .logo {
+.cardRefri:hover .circle .logo {
   transform: scale(0);
   transition-delay: 0s;
 }
@@ -141,7 +134,7 @@ teste {
   visibility: hidden;
 }
 
-.card:hover .content {
+.cardRefri:hover .content {
   left: 0;
   opacity: 1;
   visibility: visible;
@@ -171,7 +164,7 @@ teste {
   font-weight: 500;
 }
 
-.card .product_img {
+.cardRefri .product_img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -181,24 +174,24 @@ teste {
   transition-delay: 0s;
 }
 
-.card:hover .product_img {
+.cardRefri:hover .product_img {
   left: 72%;
   transform: translate(-50%, -50%) scale(1);
   transition-delay: 0.5s;
 }
 
 @media (max-width: 991px) {
-  .card {
+  .cardRefri {
     width: auto;
     max-width: 350px;
     align-items: flex-start;
   }
 
-  .card:hover {
+  .cardRefri:hover {
     height: 600px;
   }
 
-  .card:hover .product_img {
+  .cardRefri:hover .product_img {
     top: initial;
     bottom: 30px;
     left: 50%;
@@ -206,7 +199,7 @@ teste {
     height: 300px;
   }
 
-  .card .content {
+  .cardRefri .content {
     width: 100%;
     left: 0;
     padding: 40px;

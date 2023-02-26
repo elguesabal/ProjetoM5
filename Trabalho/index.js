@@ -801,6 +801,15 @@ app.get('/exames/remove/:id', (req, res) => {
 })
 //Fim da parte dos exames (Maiara)
 
+
+
+// ROTA NAO EXISTENTE - JOSE
+app.use(function (req, res, next) {
+    res.status(404).render('error 404', { layout: false })
+})
+// ROTA NAO EXISTENTE - JOSE
+
+
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',

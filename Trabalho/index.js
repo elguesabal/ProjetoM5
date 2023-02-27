@@ -401,6 +401,7 @@ app.post('/cliente', (req, res) => {
 
         if (cliente == undefined) {
             res.redirect('/loginP')
+            return
         } if (cliente.senha == senha) {
             res.redirect(`/cliente/${cpf}`)
         } else {
@@ -795,7 +796,7 @@ app.get('/exames/remove/:id', (req, res) => {
         if (err) {
             console.log(err)
             return
-    }
+        }
     res.redirect('/exames')})
     console.log("Deletado com sucesso!")
 })

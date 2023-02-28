@@ -428,7 +428,17 @@ app.get('/cliente/:cpf', (req, res) => {
         }
 
         const cliente = data[0]
-        res.render('clienteInfo', { layout: false, cliente })
+    
+        const sqlExame = `SELECT * FROM exames WHERE paciente = '${cliente.nome}'`
+
+        conn.query(sqlExame, function (err, data){
+            if (err) {
+            console.log(err)
+            return
+            }
+            const listarExames = data[0]
+            res.render('clienteInfo', { layout: false, cliente, listarExames })
+        })
     })
 })
 // VER INFORMACOES PACIENTE   -   JOSE
@@ -749,7 +759,8 @@ app.get('/exames/:id', (req, res) => {
     const id = req.params.id
     
     const sql = `SELECT * FROM exames WHERE id = ${id}`
-    
+    const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
+
     conn.query(sql, function (err, data){
         if (err) {
         console.log(err)

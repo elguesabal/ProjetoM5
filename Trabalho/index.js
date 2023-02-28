@@ -513,7 +513,9 @@ app.post('/medicamentos/receber', (req, res) => {
     const composicao = req.body.composicao
     const comprimidos = req.body.comprimidos
     const preco = req.body.preco
-    const sql = `INSERT INTO medicamentos (nome, dosagem, composicao, comprimidos, preco) VALUES ('${nome}', '${dosagem}', '${composicao}', '${comprimidos}', '${preco}')`
+    
+    const urlmed = req.body.urlmed
+    const sql = `INSERT INTO medicamentos (nome, dosagem, composicao, comprimidos, preco, urlmed) VALUES ('${nome}', '${dosagem}', '${composicao}', '${comprimidos}', '${preco}', '${urlmed}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -596,7 +598,8 @@ app.post('/updatemed', (req, res) => {
     const composicao = req.body.composicao
     const comprimidos = req.body.comprimidos
     const preco = req.body.preco
-    const sql = `UPDATE medicamentos SET nome = '${nome}', dosagem = '${dosagem}', composicao =  '${composicao}', comprimidos = '${comprimidos}', preco = '${preco}' WHERE id = '${id}' `
+    const urlmed = req.body.urlmed
+    const sql = `UPDATE medicamentos SET nome = '${nome}', dosagem = '${dosagem}', composicao =  '${composicao}', comprimidos = '${comprimidos}', preco = '${preco}',  urlmed = '${urlmed}'  WHERE id = '${id}' `
 
     conn.query(sql, function (err) {
         if (err) {
@@ -653,6 +656,7 @@ app.get('/med/remove/:id', (req, res) => {
         console.log("Delete com sucesso")
     })
 })
+
 
 
 

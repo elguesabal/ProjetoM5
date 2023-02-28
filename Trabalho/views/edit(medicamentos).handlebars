@@ -1,38 +1,90 @@
-{{!-- Edição de medicamentos --}}
-<Header><h1>Editar Medicamentos</h1>
-   <p><a href="/medicamentos" > Voltar</a> </p>
-   <hr>
+{{!-- Edição dos medicamentos --}}
+
+{{!-- link do bootstrap e do css --}}
+<link rel='stylesheet' href='/public/css/style-medicamentos.css' />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+{{!-- header com icone de home, titulo e icone ilustrativo --}}
+<header>
+  <center>
+    <h3>
+      <div class="Title"><a class="link" href="/home"> <svg xmlns="http://www.w3.org/2000/svg" class="home" width="35"
+            height="35" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+            <path
+              d="M21.7,10.3l-9-8c-0.4-0.3-0.9-0.3-1.3,0l-9,8c-0.4,0.4-0.5,1-0.1,1.4s1,0.5,1.4,0.1L4,11.4V21c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-9.6l0.3,0.3c0.4,0.4,1,0.3,1.4-0.1C22.1,11.3,22.1,10.6,21.7,10.3z M14,15h-1v1c0,0.6-0.4,1-1,1s-1-0.4-1-1v-1h-1c-0.6,0-1-0.4-1-1s0.4-1,1-1h1v-1c0-0.6,0.4-1,1-1s1,0.4,1,1v1h1c0.6,0,1,0.4,1,1S14.6,15,14,15z" />
+          </svg>
+        </a><svg xmlns="http://www.w3.org/2000/svg" class="capsula" width="30" height="30" fill="currentColor"
+          class="bi bi-capsule" viewBox="0 0 16 16">
+          <path
+            d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+        </svg>Edição de medicamentos </div>
+    </h3>
+    <hr >
+  </center>
 </header>
-   <form action="/updatemed" method="POST">
-   <div class="form-control">
-     <input type="hidden" name="id" id="id" value="{{medicamentos.id}}">
-     <label for="nome">Nome:</label>
-     <input type="text" name="nome" placeholder="Digite o nome do medicamento" value="{{medicamentos.nome}}">
-   </div> 
+<main>
 
-<div class="form-control">
-  <label for="tipo">Dosagem:</label>
-  <input type="text" name="dosagem" placeholder="Digite o tipo" value="{{medicamentos.dosagem}}">
-</div>   
+  <body>
+    <a href="/medicamentos"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+        class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z" />
+      </svg></a>
 
-<div class="form-control">
-  <label for="composicao">Composição:</label>
-  <input type="text" name="composicao" placeholder="Digite a composição" value="{{medicamentos.composicao}}">
-</div>   
+    <center>
+
+      <form action="/updatemed" method="POST">
+        <div class="form-control">
+          <input type="hidden" name="id" id="id" value="{{medicamentos.id}}">
+          <label for="nome">Nome:</label>
+          <input type="text" name="nome" placeholder="Digite o nome do medicamento" value="{{medicamentos.nome}}">
+        </div>
+
+        <div class="form-control">
+          <label for="tipo">Dosagem:</label>
+          <input type="text" name="dosagem" placeholder="Digite o tipo" value="{{medicamentos.dosagem}}">
+        </div>
+
+        <div class="form-control">
+          <label for="composicao">Composição:</label>
+          <input type="text" name="composicao" placeholder="Digite a composição" value="{{medicamentos.composicao}}">
+        </div>
 
 
-<div class="form-control">
-  <label for="comprimidos">Comprimidos:</label>
-  <input type="text" name="comprimidos" placeholder="Digite a quantidade de comprimidos" value="{{medicamentos.comprimidos}}">
-</div>   
-   
-<div class="form-control">
-  <label for="preco">Preço:</label>
-  <input type="text" name="preco" placeholder="Digite o preço" value="{{medicamentos.preco}}">
-</div>   
+        <div class="form-control">
+          <label for="comprimidos">Comprimidos:</label>
+          <input type="text" name="comprimidos" placeholder="Digite a quantidade de comprimidos"
+            value="{{medicamentos.comprimidos}}">
+        </div>
 
-<form>
-   <input type="submit" value="Editar">
-   </form>
+        <div class="form-control">
+          <label for="preco">Preço:</label>
+          <input type="text" name="preco" placeholder="Digite o preço" value="{{medicamentos.preco}}">
+        </div>
 
-   
+        
+        <div class="form-control edit">
+          <label for="urlmed">url da imagem do medicamento</label>
+          <input type="text" name="urlmed" placeholder="Digite a url" value="{{medicamentos.urlmed}}">
+        </div>
+
+        <form>
+          <input  type="submit"> </input>
+
+        </form>
+    </center>
+
+
+
+
+  </body>
+</main>
+
+
+
+{{!-- footer da page --}}
+<footer class="pt-5 my-5 text-muted border-top text-center">
+  Created by the Clínica Resilia team &middot; &copy; 2023
+</footer>
+
+</html>

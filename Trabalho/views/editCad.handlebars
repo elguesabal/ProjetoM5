@@ -20,6 +20,9 @@
 <div class="box">
      <form action="/receita/updateReceita" method="post">
                          <h1>Editar cliente</h1>
+       <div id="boxButton">
+          <pre> <a href="/receitaCad"> Fazer cadastro </a> <a href="/"> Inicio</a> </pre>
+       </div>
           <div class="form-control">
 
                <input type="hidden" name="id" id="id" value="{{editarReceita.id}}">
@@ -51,7 +54,7 @@
                <div class="form-control">
 
                     <label for="data">Data:</label>
-                    <input type="text" name="data" value="{{editarReceita.data}}">
+                    <input type="date" name="data" value="{{editarReceita.data}}">
 
                </div>
 

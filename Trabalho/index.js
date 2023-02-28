@@ -400,15 +400,22 @@ app.post('/cliente', (req, res) => {
         const cliente = data[0]
 
         if (cliente == undefined) {
-            res.redirect('/loginP')
+            res.redirect('/cliente/loginP_loginSenhaErrado')
             return
         } if (cliente.senha == senha) {
             res.redirect(`/cliente/${cpf}`)
         } else {
-            res.redirect(`/loginP`)
+            res.redirect(`/cliente/loginP_loginSenhaErrado`)
         }
     })
 })
+
+
+// LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
+app.get('/cliente/loginP_loginSenhaErrado', (req, res) => {
+    res.render('loginP_loginSenhaErrado', { layout: false })
+})
+// LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
 
 app.get('/cliente/:cpf', (req, res) => {
     const cpf = req.params.cpf
@@ -818,7 +825,7 @@ app.use(function (req, res, next) {
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',
-    port: '3306',
+    port: '3307',
     user: 'root',
     password: '',
     database: 'clinica_resilia'

@@ -401,6 +401,7 @@ app.post('/cliente', (req, res) => {
 
         if (cliente == undefined) {
             res.redirect('/loginP')
+            return
         } if (cliente.senha == senha) {
             res.redirect(`/cliente/${cpf}`)
         } else {
@@ -799,11 +800,20 @@ app.get('/exames/remove/:id', (req, res) => {
         if (err) {
             console.log(err)
             return
-    }
+        }
     res.redirect('/exames')})
     console.log("Deletado com sucesso!")
 })
 //Fim da parte dos exames (Maiara)
+
+
+
+// ROTA NAO EXISTENTE - JOSE
+app.use(function (req, res, next) {
+    res.status(404).render('error 404', { layout: false })
+})
+// ROTA NAO EXISTENTE - JOSE
+
 
 // conexão bd
 const conn = mysql.createConnection({

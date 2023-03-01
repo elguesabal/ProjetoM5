@@ -119,12 +119,13 @@
         <div class="form-control">
 
           <label for="remedio">Receita:</label>
-          <input
-            type="text"
-            name="remedio"
-            placeholder="Insira a presquição"
-            required
-          />
+          <select name="remedio">
+
+          {{#each listarMed}}
+         <option value="{{nome}}"> {{nome}}</option>
+         {{/each}}
+          </select>
+        
 
         </div>
         <div class="invalid-feedback">

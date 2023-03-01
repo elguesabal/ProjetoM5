@@ -65,12 +65,18 @@
 
                </div>
 
-               <div class="form-control">
+             <div class="form-control">
 
-                    <label for="remedio">Receita:</label>
-                    <input type="text" name="remedio" value="{{editarReceita.remedio}}">
+          <label for="remedio">Receita:</label>
+          <select name="remedio">
 
-               </div>
+          {{#each listarMed}}
+         <option value="{{remedio}}"> {{nome}}</option>
+         {{/each}}
+          </select>
+        
+
+        </div>
                <br>
           <input type="submit"value="Enviar"> 
 

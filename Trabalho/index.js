@@ -759,7 +759,7 @@ app.get('/exames/:id', (req, res) => {
     const id = req.params.id
     
     const sql = `SELECT * FROM exames WHERE id = ${id}`
-    const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
+    // const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
 
     conn.query(sql, function (err, data){
         if (err) {

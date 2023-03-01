@@ -13,7 +13,7 @@ app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 
-app.use('/public', express.static(__dirname + '/public')) //link do public
+app.use('/public', express.static(__dirname + '/public'))
 
 
 // rotas
@@ -429,15 +429,31 @@ app.get('/cliente/:cpf', (req, res) => {
 
         const cliente = data[0]
     
-        const sqlExame = `SELECT * FROM exames WHERE paciente = '${cliente.nome}'`
+        const sqlExame = `SELECT * FROM exames WHERE paciente = 'Maria Bonita'`
+
+
 
         conn.query(sqlExame, function (err, data){
             if (err) {
             console.log(err)
             return
             }
-            const listarExames = data[0]
-            res.render('clienteInfo', { layout: false, cliente, listarExames })
+            const listarExames = data
+
+
+
+            const sqlConsulta = `SELECT * FROM consulta WHERE id = '4'`
+
+            conn.query(sqlConsulta, function (err, data){
+                if (err) {
+                console.log(err)
+                return
+                }
+                const listarConsulta = data
+    
+                
+                res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta })
+            })
         })
     })
 })
@@ -759,7 +775,7 @@ app.get('/exames/:id', (req, res) => {
     const id = req.params.id
     
     const sql = `SELECT * FROM exames WHERE id = ${id}`
-    // const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
+    const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
 
     conn.query(sql, function (err, data){
         if (err) {

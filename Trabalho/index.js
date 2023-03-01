@@ -13,7 +13,7 @@ app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 
-app.use('/public', express.static(__dirname + '/public'))
+app.use('/public', express.static(__dirname + '/public')) //link do public
 
 
 // rotas

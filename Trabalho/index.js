@@ -732,12 +732,13 @@ app.post('/marcar_exames/', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
+    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
-    const cpf_cliente = req.body.cpf_cliente
+    
 
 
-    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario, cpf_cliente) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}', '${cpf_cliente}')`
+    const sql = `INSERT INTO exames (id,exame,medico,paciente,cpf_cliente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${cpf_cliente}','${data}','${horario}')`
 
 
     conn.query(sql, function (err) {
@@ -821,12 +822,13 @@ app.post('/upexame', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
+    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
-    const cpf_cliente = req.body.cpf_cliente
     
     
-    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}', cpf_cliente = '${cpf_cliente} WHERE id = '${id}'`
+    
+    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', cpf_cliente = '${cpf_cliente}, data = '${data}', horario = '${horario}' WHERE id = '${id}'`
     
     conn.query(sql, function (err) {
         if (err) {

@@ -427,9 +427,9 @@ app.get('/cliente/:cpf', (req, res) => {
             return
         }
 
-        const cliente = data[0]
+        const cpf_cliente = data[0]
     
-        const sqlExame = `SELECT * FROM exames WHERE paciente = 'Maria Bonita'`
+        const sqlExame = `SELECT * FROM exames WHERE cpf_cliente = '${cpf_cliente}'`
 
 
 
@@ -723,8 +723,10 @@ app.post('/marcar_exames/', (req, res) => {
     const paciente = req.body.paciente
     const data = req.body.data
     const horario = req.body.horario
+    const cpf_cliente = req.body.cpf_cliente
 
-    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}')`
+    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario,cpf_cliente) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}', '${cpf_cliente}')`
+
 
     conn.query(sql, function (err) {
         if (err) {
@@ -775,7 +777,7 @@ app.get('/exames/:id', (req, res) => {
     const id = req.params.id
     
     const sql = `SELECT * FROM exames WHERE id = ${id}`
-    const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
+    // const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
 
     conn.query(sql, function (err, data){
         if (err) {
@@ -810,9 +812,10 @@ app.post('/upexame', (req, res) => {
     const paciente = req.body.paciente
     const data = req.body.data
     const horario = req.body.horario
+    const cpf_cliente = req.body.cpf_cliente
     
     
-    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
+    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}', cpf_cliente = '${cpf_cliente} WHERE id = '${id}'`
     
     conn.query(sql, function (err) {
         if (err) {

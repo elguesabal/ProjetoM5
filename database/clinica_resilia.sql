@@ -55,7 +55,7 @@ CREATE TABLE `exames` (
   `exame` varchar(100) DEFAULT NULL,
   `medico` varchar(100) DEFAULT NULL,
   `paciente` varchar(100) DEFAULT NULL,
-  `data` varchar(10) DEFAULT NULL,
+  `data` varchar(50) DEFAULT NULL,
   `horario` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -213,11 +213,22 @@ app.get('/medico/excluir/:id', (req, res) => {
 // fim das rotas dos medicos(Bruno)
 
 
+
 //Inicio da rota da prescrição (Otavio)
 
 app.get('/receitaCad', (req, res) => {
-    res.render('receitaCad', { layout: false })
+    // id = req.body.id;
+     const sql = `SELECT * FROM medicamentos` 
 
+    conn.query(sql, function (err, data) {
+       if (err) {
+            console.log(err)
+        }
+         const listarMed = data
+     console.log(listarMed);
+     
+     res.render('receitaCad', { layout: false , listarMed })
+    })
 })
 //receitaCad <-
 app.post('/receita/insertreceita', (req, res) => {

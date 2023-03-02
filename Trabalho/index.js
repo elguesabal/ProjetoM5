@@ -364,7 +364,8 @@ app.get('/receita/remove/:id', (req, res) =>{
 
 // page login
 app.get('/loginP', (req, res) => {
-    res.render('loginP', { layout: false })
+    const senhaErrada = 'none'
+    res.render('loginP', { layout: false, senhaErrada })
 })
 
 // CADASTRAR PACIENTE   -   JOSE
@@ -424,7 +425,8 @@ app.post('/cliente', (req, res) => {
 
 // LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
 app.get('/cliente/loginP_loginSenhaErrado', (req, res) => {
-    res.render('loginP_loginSenhaErrado', { layout: false })
+    const senhaErrada = 'block'
+    res.render('loginP', { layout: false, senhaErrada })
 })
 // LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
 
@@ -732,13 +734,12 @@ app.post('/marcar_exames/', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
-    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
-    
+    const cpf_cliente = req.body.cpf_cliente
 
 
-    const sql = `INSERT INTO exames (id,exame,medico,paciente,cpf_cliente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${cpf_cliente}','${data}','${horario}')`
+    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario, cpf_cliente) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}', '${cpf_cliente}')`
 
 
     conn.query(sql, function (err) {
@@ -822,13 +823,12 @@ app.post('/upexame', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
-    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
+    const cpf_cliente = req.body.cpf_cliente
     
     
-    
-    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', cpf_cliente = '${cpf_cliente}, data = '${data}', horario = '${horario}' WHERE id = '${id}'`
+    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}', cpf_cliente = '${cpf_cliente} WHERE id = '${id}'`
     
     conn.query(sql, function (err) {
         if (err) {
@@ -868,7 +868,7 @@ app.use(function (req, res, next) {
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',
-    port: '3307',
+    port: '3306',
     user: 'root',
     password: '',
     database: 'clinica_resilia'

@@ -1,4 +1,4 @@
-{{!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-6" style="justify-content: center;">
 
-                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas</h1>
+                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Exames Marcados</h1>
 
                     <div class="row" style="justify-content: center;">
 
@@ -40,27 +40,31 @@
 
                             <div class="card-body">
 
-
-                                <h4 class="card-title" style="margin-bottom: 10px;">
+                                <a class="card-title" style="margin-bottom: 10px;" href="/exames/{{this.id}}"><strong> #{{this.id}}</strong></a> 
+                                {{!-- <h4 class="card-title" style="margin-bottom: 10px;">
                                         <strong>Consulta n.º
-                                        {{this.consultaid}}</strong></h4>
+                                        {{this.consultaid}}</strong></h4> --}}
                                 <p class="text-dark fs-6">
-                                    <strong>Nome:</strong> {{cliente}}
+                                    <strong>Exame:</strong> {{exame}}
+                                    <br>
+                                    <strong>Médico:</strong> {{medico}}
+                                    <br>
+                                    <strong>Paciente:</strong> {{paciente}}
+                                    <br>
+                                    <strong>CPF Paciente:</strong> {{cpf_cliente}}
                                     <br>
                                     <strong>Data:</strong> {{data}}
                                     <br>
-                                    <strong>Horário:</strong> {{horario}}
-                                    <br>
-                                    <strong>Sintomas:</strong> {{sintomas}}
+                                    <strong>Horário:</strong> {{horario}} 
                                 </p>
 
                                 <div class="form-check form-switch" style="margin-bottom: 5%;">
                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Consulta realizada</label>
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Exame realizado</label>
                                 </div>
 
 
-                                <a class="btn btn-primary" href="/marcar_exames">Marcar exame</a>
+                                {{!-- <a class="btn btn-primary" href="/marcar_exames">Marcar exame</a> --}}
 
                             </div>
                         </div>
@@ -70,17 +74,17 @@
 </div>
 </div>
 
-</body> --}}
-
-<h1>Exames Marcados</h1>
+</body>
+{{!-- Código antigo --}}
+{{!-- <h1>Exames Marcados</h1>
 <link rel='stylesheet' href='/public/css/style_exames.css' />
 
 
 <div class="container">
-    {{#each listar}}
+    {{#each listar}} --}}
 
-    {{!-- <strong> #{{this.id}}</strong> - --}}
-    <a href="/exames/{{this.id}}"><strong> #{{this.id}}</strong></a> 
+
+    {{!-- <a href="/exames/{{this.id}}"><strong> #{{this.id}}</strong></a> 
     {{exame}} 
     <br> 
     {{paciente}} 
@@ -97,4 +101,4 @@
 <hr>
 <a href="/">Home</a>
 <hr>
-<a href="/index_exames">Exames</a>
+<a href="/index_exames">Exames</a> --}}

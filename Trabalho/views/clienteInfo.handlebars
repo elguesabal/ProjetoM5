@@ -257,16 +257,15 @@
     </tr>
   </thead>
   <tbody>
-    {{!-- {{#each listarExames}} --}}
+    {{#each listarExames}}
       <tr>
-        <th scope="row">1</th>
-        <td>{{listarExames.id}}</td>
-        <td>{{listarExames.exame}}</td>
-        <td>{{listarExames.medico}}</td>
-        <td>{{listarExames.data}}</td>
-        <td>{{listarExames.horario}}</td>
+        <th scope="row">{{id}}</th>
+        <td>{{exame}}</td>
+        <td>{{medico}}</td>
+        <td>{{data}}</td>
+        <td>{{horario}}</td>
       </tr>
-    {{!-- {{/each}} --}}
+    {{/each}}
   </tbody>
 </table>
 {{!-- RECOMENDACAO --}}
@@ -386,6 +385,8 @@ algumas outras possibilidades
         </footer>
     </div>
 
+    
+{{listarConsulta.data}}
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/public/javascript/checkout.js"></script>

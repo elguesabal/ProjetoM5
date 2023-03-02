@@ -213,11 +213,22 @@ app.get('/medico/excluir/:id', (req, res) => {
 // fim das rotas dos medicos(Bruno)
 
 
+
 //Inicio da rota da prescrição (Otavio)
 
 app.get('/receitaCad', (req, res) => {
-    res.render('receitaCad', { layout: false })
+    // id = req.body.id;
+     const sql = `SELECT * FROM medicamentos` 
 
+    conn.query(sql, function (err, data) {
+       if (err) {
+            console.log(err)
+        }
+         const listarMed = data
+     console.log(listarMed);
+     
+     res.render('receitaCad', { layout: false , listarMed })
+    })
 })
 //receitaCad <-
 app.post('/receita/insertreceita', (req, res) => {
@@ -353,7 +364,8 @@ app.get('/receita/remove/:id', (req, res) =>{
 
 // page login
 app.get('/loginP', (req, res) => {
-    res.render('loginP', { layout: false })
+    const senhaErrada = 'none'
+    res.render('loginP', { layout: false, senhaErrada })
 })
 
 // CADASTRAR PACIENTE   -   JOSE
@@ -413,7 +425,8 @@ app.post('/cliente', (req, res) => {
 
 // LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
 app.get('/cliente/loginP_loginSenhaErrado', (req, res) => {
-    res.render('loginP_loginSenhaErrado', { layout: false })
+    const senhaErrada = 'block'
+    res.render('loginP', { layout: false, senhaErrada })
 })
 // LOGIN OU SENHA ERREDA PACIENTE   -   JOSE
 
@@ -429,15 +442,31 @@ app.get('/cliente/:cpf', (req, res) => {
 
         const cliente = data[0]
     
-        const sqlExame = `SELECT * FROM exames WHERE paciente = '${cliente.nome}'`
+        const sqlExame = `SELECT * FROM exames WHERE paciente = 'Maria Bonita'`
+
+
 
         conn.query(sqlExame, function (err, data){
             if (err) {
             console.log(err)
             return
             }
-            const listarExames = data[0]
-            res.render('clienteInfo', { layout: false, cliente, listarExames })
+            const listarExames = data
+
+
+
+            const sqlConsulta = `SELECT * FROM consulta WHERE id = '4'`
+
+            conn.query(sqlConsulta, function (err, data){
+                if (err) {
+                console.log(err)
+                return
+                }
+                const listarConsulta = data
+    
+                
+                res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta })
+            })
         })
     })
 })
@@ -705,10 +734,14 @@ app.post('/marcar_exames/', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
+    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
+    
 
-    const sql = `INSERT INTO exames (id,exame,medico,paciente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${data}', '${horario}')`
+
+    const sql = `INSERT INTO exames (id,exame,medico,paciente,cpf_cliente,data,horario) VALUES ('${id}','${exame}','${medico}','${paciente}','${cpf_cliente}','${data}', '${horario}')`
+
 
     conn.query(sql, function (err) {
         if (err) {
@@ -759,7 +792,6 @@ app.get('/exames/:id', (req, res) => {
     const id = req.params.id
     
     const sql = `SELECT * FROM exames WHERE id = ${id}`
-    const sql2 = `SELECT * FROM paciente WHERE nome = ${nome}`
 
     conn.query(sql, function (err, data){
         if (err) {
@@ -792,11 +824,13 @@ app.post('/upexame', (req, res) => {
     const exame = req.body.exame
     const medico = req.body.medico
     const paciente = req.body.paciente
+    const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
     
     
-    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
+    
+    const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', paciente = '${paciente}', cpf_cliente = '${cpf_cliente}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
     
     conn.query(sql, function (err) {
         if (err) {

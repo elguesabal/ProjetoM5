@@ -281,12 +281,30 @@ app.get('/receita/:id', (req, res) => {
     conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
+            
             return
         }
 
-        const listarclientes = data[0]
-        res.render('receitaId', { layout: false, listarclientes })
-    })
+        const listarclientes = data
+
+
+        const sql = `SELECT * FROM medicamentos WHERE id = ${id}`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const listarMed = data
+    
+
+
+     
+     
+   res.render('receitaId', { layout: false, listarclientes,listarMed })
+    })   
+})
 })
 
 // editando  a prescrição

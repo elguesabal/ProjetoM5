@@ -82,15 +82,16 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="data" class="form-label">Data do exame:</label>
-                                <select class="form-select" name="data" id="data" required>
-                                    <option value="{{editarexame.data}}"></option>
+                                <label for="data" class="form-label">Dia do exame:</label>
+                                <input list="dias" class="form-control" name="data" id="data" placeholder="Dia do Exame" value="{{editarexame.data}}" required>
+                                <datalist id="dias">
+                                    <option value="">Escolher...</option>
                                     <option value="Segunda-feira">Segunda-feira</option>
                                     <option value="Terça-feira">Terça-feira</option>
                                     <option value="Quarta-feira">Quarta-feira</option>
                                     <option value="Quinta-feira">Quinta-feira</option>
                                     <option value="Sexta-feira">Sexta-feira</option>
-                                </select>
+                                </datalist>
                                 <div class="invalid-feedback">
                                     Por favor, insira uma data.
                                 </div>
@@ -98,7 +99,8 @@
 
                             <div class="col-md-6">
                                 <label for="horario" class="form-label">Horário:</label>
-                                <select class="form-select" name="horario"  id="horario" value="editarexame.horario" required>
+                                <input list="hora" class="form-control" name="horario" id="horario" placeholder="Horário do Exame" value="{{editarexame.horario}}" required>
+                                <datalist id="hora">
                                     <option value="">Escolher...</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -111,7 +113,7 @@
                                     <option value="16:00">16:00</option>
                                     <option value="17:00">17:00</option>
                                     <option value="18:00">18:00</option>
-                                </select>
+                                </datalist>
                                 <div class="invalid-feedback">
                                     Por favor, insira um horário.
                                 </div>

@@ -455,7 +455,7 @@ app.get('/cliente/:cpf', (req, res) => {
 
 
 
-            const sqlConsulta = `SELECT * FROM consulta WHERE id = '4'`
+            const sqlConsulta = `SELECT * FROM consulta WHERE consultacpf_cliente = '${cpf}'`
 
             conn.query(sqlConsulta, function (err, data){
                 if (err) {
@@ -713,15 +713,16 @@ app.post('/marcarConsulta', (req, res) => {
     const email = req.body.email
     const data = req.body.data
     const horario = req.body.horario
+    const cpf_cliente = req.body.cpf_cliente
     const sintomas = req.body.sintomas
-    const sql = `INSERT INTO consulta (cliente, clientesobre, email,data, horario, sintomas) VALUES ('${cliente}','${clientesobre}','${email}','${data}','${horario}','${sintomas}')`
+    const sql = `INSERT INTO consulta (data, horario, cliente,clientesobre, email, sintomas, consultacpf_cliente) VALUES ('${data}','${horario}','${cliente}','${clientesobre}','${email}','${sintomas}','${cpf_cliente}')`
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
         }
 
         console.log("Consulta marcada!")
-        res.redirect('/cliente/:cpf')
+        res.redirect(`/cliente/${cpf_cliente}`)
     })
 
 })

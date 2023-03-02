@@ -442,7 +442,7 @@ app.get('/cliente/:cpf', (req, res) => {
 
         const cliente = data[0]
     
-        const sqlExame = `SELECT * FROM exames WHERE paciente = 'Maria Bonita'`
+        const sqlExame = `SELECT * FROM exames WHERE cpf_cliente = '${cpf}'`
 
 
 

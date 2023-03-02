@@ -35,14 +35,14 @@ CREATE TABLE `consulta` (
   `clientesobre` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `sintomas` varchar(300) DEFAULT NULL,
-  `cpf_cliente` varchar(15) NOT NULL
+  `consultacpf_cliente` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `consulta`
 --
 
-INSERT INTO `consulta` (`id`, `data`, `horario`, `cliente`, `clientesobre`, `email`, `sintomas`, `cpf_cliente`) VALUES
+INSERT INTO `consulta` (`id`, `data`, `horario`, `cliente`, `clientesobre`, `email`, `sintomas`, `consultacpf_cliente`) VALUES
 (4, 'Terça-feira', '16:00', 'ssss', 'ssss', '', 'nao', '');
 
 -- --------------------------------------------------------

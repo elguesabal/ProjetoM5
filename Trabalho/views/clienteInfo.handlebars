@@ -120,7 +120,8 @@
                 </div>
 
 
-                <div class="col-md-4">
+                <div class="col-md-4"> 
+                    
                     <h4 class="mb-3">Marque sua consulta</h4>
                  <form action="/marcarConsulta" method="post" class="needs-validation" novalidate>
                         <div class="row g-3">
@@ -134,10 +135,10 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="clientesobre" class="form-label">Sobrenome</label>
+                                <label for="clientesobre" class="form-label">Médico</label>
                                 <input type="text" class="form-control" name="clientesobre" id="clientesobre" placeholder="Insira seu sobrenome" value="" required>
                                 <div class="invalid-feedback">
-                                    Por favor insira seu sobrenome.                             
+                                    Por favor insira um médico.                          
                                        </div>
                             </div>
 
@@ -148,6 +149,7 @@
                                     Please enter a valid email address for shipping updates.
                                 </div>
                             </div>
+
 
                             <div class="col-md-6">
                                 <label for="data" class="form-label">Dia da consulta</label>
@@ -189,13 +191,18 @@
                                 <label for="sintomas" class="form-label">Sintomas:</label>
                                 <textarea for="sintomas" class="form-control" name="sintomas" id="sintomas" placeholder="Descreva seus sintomas..." rows="3" required></textarea>
                                 <div class="invalid-feedback">
-                                    Por favor insira seu sintomas.
+                                    Por favor insira seus sintomas.
                                 </div>
                             </div>
                         </div>
 
                         <hr class="my-4">
 
+                            <div class="col-1">
+                               <input type="text" class="form-control" name="cpf_cliente" id="cpf_cliente" hidden value={{cliente.cpf}}>
+                                <div class="invalid-feedback">
+                                </div>
+                            </div>
                         <button class="w-100 btn btn-primary btn-lg" type="submit">Agendar</button>
                     </form>
                 </div>

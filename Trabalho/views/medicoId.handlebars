@@ -248,50 +248,33 @@
                     <div class="col-md-14">
 
                         <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 5%;">Exames marcados</h1>
-
+                        <div class ='d-flex justify-content-center'>
+                            <a href="/marcar_exames/" type="button" class="btn btn-primary"></button>Marcar Exames</a>
+                        </div>
                         <div class="card card-body bg-light">
 
-                            <table class="table table-striped table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th scope="col">Exame</th>
-                                        <th scope="col">Paciente</th>
-                                        <th scope="col">Data</th>
-                                        <th scope="col">Horário</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    {{!-- colocaria as informaçoes igual no card --}}
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Bruno</td>
-                                        <td>Segunda-feira</td>
-                                        <td>16:00</td>
-
-                                        <td><a class="btn btn-primary btn-sm" href="#">Editar</a></td>
-                                        <td><a class="btn btn-primary btn-sm" href="#">Excluir</a></td>
-                                          <td><a class="btn btn-primary btn-sm" href="#">Prescrição</a></td>
-
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Fernando</td>
-                                        <td>Sexta-feira</td>
-                                        <td>13:00</td>
-
-                                        <td><a class="btn btn-primary btn-sm" href="#">Editar</a></td>
-                                        <td><a class="btn btn-primary btn-sm" href="#">Excluir</a></td>
-                                          <td><a class="btn btn-primary btn-sm" href="#">Prescrição</a></td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Exame</th>
+                                            <th scope="col">Nome do Paciente</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Horário</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each listarExames}}
+                                        <tr>
+                                            <th scope="row">{{id}}</th>
+                                            <td>{{exame}}</td>
+                                            <td>{{paciente}}</td>
+                                            <td>{{data}}</td>
+                                            <td>{{horario}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
 
 
                         </div>

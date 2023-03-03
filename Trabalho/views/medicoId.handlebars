@@ -310,13 +310,13 @@
 
 
                 {{!-- consultas e marcar exames --}}
-                <div class="col-md-6" style="justify-content: center;">
+                   <div class="col-md-6" style="justify-content: center;">
 
                     <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas</h1>
 
                     <div class="row" style="justify-content: center;">
 
-                        {{#each listarC}}
+                        {{#each listarConsulta}}
 
                         <div class="card text-dark bg-light" style="width: 16rem; margin: 3%">
 
@@ -324,7 +324,7 @@
 
 
                                 <h4 class="card-title" style="margin-bottom: 10px;"><strong>Consulta n.º
-                                        {{this.consultaid}}</strong></h4>
+                                        {{this.id}}</strong></h4>
                                 <p class="text-dark fs-6">
                                     <strong>Nome:</strong> {{cliente}}
                                     <br>
@@ -359,6 +359,8 @@
 
 
     </main>
+
+
 
 
 

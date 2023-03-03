@@ -35,7 +35,8 @@ CREATE TABLE `consulta` (
   `clientesobre` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `sintomas` varchar(300) DEFAULT NULL,
-  `consultacpf_cliente` varchar(15) NOT NULL
+  `consultacpf_cliente` varchar(15) NOT NULL,
+  `id_medico` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

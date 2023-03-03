@@ -315,23 +315,18 @@ algumas outras possibilidades
             </div>
 
 
-
 {{!-- RECOMENDACAO --}}
 <br><br>
 
 <div class="list-group">
   <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#medicamento1{{!-- aki o id substitui o numero --}}">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small>3 days ago</small>
+      <h5 class="mb-1">Consultas Marcadas</h5>
     </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small>And some small print.</small>
-  </a>
+   </a>
   <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#medicamento2{{!-- aki o id substitui o numero --}}">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
     </div>
     <p class="mb-1">Some placeholder content in a paragraph.</p>
     <small class="text-muted">And some muted small print.</small>
@@ -353,11 +348,20 @@ algumas outras possibilidades
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Consultas do paciente {{cliente.nome}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        medicamento 1
+        {{#each listarConsulta}}
+<ul class="list-group">
+  <li class="list-group-item">Consulta Nº: {{this.id}}</li>
+  <li class="list-group-item">Nome do paciente: {{cliente}}</li>
+  <li class="list-group-item">Nome do médico: {{clientesobre}}</li>
+  <li class="list-group-item">Data da consulta: {{data}}</li>
+  <li class="list-group-item">Horário da consulta: {{horario}}</li>
+</ul>
+<br>
+{{/each}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -413,8 +417,6 @@ algumas outras possibilidades
         </footer>
     </div>
 
-    
-{{listarConsulta.data}}
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/public/javascript/checkout.js"></script>

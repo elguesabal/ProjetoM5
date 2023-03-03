@@ -742,18 +742,28 @@ app.post('/marcarConsulta', (req, res) => {
     const horario = req.body.horario
     const cpf_cliente = req.body.cpf_cliente
     const sintomas = req.body.sintomas
-    const sql = `INSERT INTO consulta (data, horario, cliente,clientesobre, email, sintomas, consultacpf_cliente) VALUES ('${data}','${horario}','${cliente}','${clientesobre}','${email}','${sintomas}','${cpf_cliente}')`
+    const id_medico = req.body.id_medico
+    const sql = `INSERT INTO consulta (data, horario, cliente,clientesobre, email, sintomas, consultacpf_cliente,id_medico) VALUES ('${data}','${horario}','${cliente}','${clientesobre}','${email}','${sintomas}','${cpf_cliente}',${id_medico})`
+    const sql1 = `SELECT id FROM medico`
+console.log(id_medico)
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
         }
-
+        conn.query(sql1, function (err, data) {
+            if (err) {
+                console.log(err)
+                return
+            }
+        
+        
+            
         console.log("Consulta marcada!")
         res.redirect(`/cliente/${cpf_cliente}`)
     })
 
 })
-
+})
 //inicio da parte dos exames (Maiara)
 
 // inserir dados (marcar exame)

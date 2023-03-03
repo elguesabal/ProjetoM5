@@ -66,6 +66,14 @@
                                        </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <label for="cpf_medico" class="form-label">CPF do Médico:</label>
+                                <input type="text" class="form-control" name="cpf_medico" placeholder="CPF do médico" value="{{editarexame.cpf_medico}}" required>
+                                <div class="invalid-feedback">
+                                    Por favor, insira o CPF do médico.
+                                </div>
+                            </div>
+
                             <div class="col-sm-6">
                                 <label for="paciente" class="form-label">Nome do Paciente:</label>
                                 <input type="text" class="form-control" name="paciente" placeholder="Nome do paciente" value="{{editarexame.paciente}}" required>

@@ -467,13 +467,32 @@ app.get('/cliente/:cpf', (req, res) => {
 
             conn.query(sqlConsulta, function (err, data){
                 if (err) {
-                console.log(err)
-                return
+                    console.log(err)
+                    return
                 }
-                const listarConsulta = data
+            const listarConsulta = data
     
                 
-                res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta })
+
+
+            const sql = `SELECT id FROM medico`
+
+                conn.query(sql, function (err, data) {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+            
+
+                    
+                    const id_medico = data
+                    function randomMedico(num) {
+                        let sorteio = Math.floor(Math.random() * num.length)
+                        return num[sorteio]
+                    }
+                    const medico = randomMedico(id_medico)
+                    res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta, medico })
+                })
             })
         })
     })

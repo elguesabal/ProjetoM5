@@ -51,27 +51,30 @@ INSERT INTO `consulta` (`id`, `data`, `horario`, `cliente`, `clientesobre`, `ema
 -- Estrutura da tabela `exames`
 --
 
+
 CREATE TABLE `exames` (
   `id` int(11) NOT NULL,
   `exame` varchar(100) DEFAULT NULL,
   `medico` varchar(100) DEFAULT NULL,
+  `cpf_medico` varchar(15) NOT NULL,
   `paciente` varchar(100) DEFAULT NULL,
+  `cpf_cliente` varchar(15) NOT NULL,
   `data` varchar(50) DEFAULT NULL,
-  `horario` time DEFAULT NULL,
-  `cpf_cliente` varchar(15) NOT NULL
+  `horario` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `exames`
 --
 
-INSERT INTO `exames` (`id`, `exame`, `medico`, `paciente`, `data`, `horario`, `cpf_cliente`) VALUES
-(9, 'Hemograma', 'Dr. Lampião', 'Maria Bonita', 'Terça-feira', '11:00:00', ''),
-(10, 'Hemograma', 'Dra. Maria Bonita', 'Lampião', '2023-03-02', '16:00:00', ''),
-(11, 'Ácido Úrico', 'Patati', 'Patatá', 'Quarta-feira', '13:00:00', ''),
-(12, 'Hemograma', 'bruno', 'Maria', 'Quarta-fei', '13:00:00', ''),
-(13, 'Hemograma', 'Maria', 'bruno', '2023-03-01', '21:00:00', ''),
-(14, 'Hemograma', 'Maria', 'bruno', '2023-03-02', '10:00:00', '');
+INSERT INTO `exames` (`id`, `exame`, `medico`, `cpf_medico`, `paciente`, `cpf_cliente`, `data`, `horario`) VALUES
+(9, 'Hemograma', 'Dr. Lampião', '', 'Maria Bonita', '111.111.111-11', 'Terça-feira', '11:00:00'),
+(10, 'Hemograma', 'Dra. Maria Bonita', '', 'Lampião', '', '2023-03-02', '16:00:00'),
+(11, 'Ácido Úrico', 'Patati', '', 'Patatá', '', 'Quarta-feira', '13:00:00'),
+(12, 'Hemograma', 'bruno', '', 'Maria Bonita', '111.111.111-11', 'Terça-feira', '13:00:00'),
+(13, 'Hemograma', 'Maria', '', 'bruno', '', '2023-03-01', '21:00:00'),
+(14, 'Hemograma', 'Maria', '', 'bruno', '', '2023-03-02', '10:00:00');
+
 
 -- --------------------------------------------------------
 

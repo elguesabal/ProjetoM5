@@ -61,22 +61,30 @@ app.get('/loginM', (req, res) => {
 // page fake login
 app.post('/login', (req, res) => {
     const cpf = req.body.cpf
-
+const id = req.body.medicoid
 
     const sql = `SELECT * FROM medico WHERE cpf = ${cpf}`
+    const sql1 = `SELECT * FROM consulta WHERE id_medico = '${id}'`
 
     conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
             return
         }
-
+        conn.query(sql1, function (err, data) {
+            if (err) {
+                console.log(err)
+                return
+            }
+            const listarExames = data;
+            const listarConsulta = data;
         const listarmedico = data[0]
-        res.render('medicoId', { layout: false, listarmedico })
+        res.render('medicoId', { layout: false, listarmedico, listarConsulta, listarExames })
 
     })
 
 
+})
 })
 
 

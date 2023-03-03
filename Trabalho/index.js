@@ -907,4 +907,3 @@ app.listen(port, () => {
     //Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
     // FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
 })
-😉😎🙌🙌🙌🙌

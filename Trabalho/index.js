@@ -153,7 +153,19 @@ app.get('/medicos/:id', (req, res) => {
         }
 
         const listarmedico = data[0]
-        res.render('medicoId', { layout: false, listarmedico })
+
+
+    
+        const sqlExame = `SELECT * FROM exames WHERE cpf_medico = '${cpf}'` //slq exames
+
+        conn.query(sqlExame, function (err, data){
+            if (err) {
+                console.log(err)
+                return
+            }
+            const listarExames = data
+            res.render('medicoId', { layout: false, listarmedico, listarExames })
+        })
     })
 })
 

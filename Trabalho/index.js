@@ -302,7 +302,17 @@ app.get('/receita/editCad/:id', (req, res) => {
         }
 
         const editarReceita = data[0]
-        res.render('editCad', { layout: false, editarReceita })
+        const med = `SELECT * FROM medicamentos` 
+
+        conn.query(med, function (err, data) {
+           if (err) {
+                console.log(err)
+            }
+             const listarMed = data
+         console.log(listarMed);
+         
+         res.render('editCad', { layout: false, editarReceita,listarMed })
+        })
     })
 })
 
@@ -349,8 +359,6 @@ app.get('/receita/remove/:id', (req, res) =>{
 
 
 //Inicio da rota da prescrição (Otavio)
-
-
 
 
 

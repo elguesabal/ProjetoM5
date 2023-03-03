@@ -368,8 +368,6 @@ app.get('/receita/remove/:id', (req, res) =>{
 
 
 
-
-
 // AKI FICA O ESPACO PARA AS REQUISICOES
 
 // page login

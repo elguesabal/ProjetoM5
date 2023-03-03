@@ -302,7 +302,17 @@ app.get('/receita/editCad/:id', (req, res) => {
         }
 
         const editarReceita = data[0]
-        res.render('editCad', { layout: false, editarReceita })
+        const med = `SELECT * FROM medicamentos` 
+
+        conn.query(med, function (err, data) {
+           if (err) {
+                console.log(err)
+            }
+             const listarMed = data
+         console.log(listarMed);
+         
+         res.render('editCad', { layout: false, editarReceita,listarMed })
+        })
     })
 })
 
@@ -897,4 +907,4 @@ app.listen(port, () => {
     //Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
     // FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
 })
-
+😉😎🙌🙌🙌🙌

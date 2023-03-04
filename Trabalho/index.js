@@ -583,6 +583,24 @@ app.get('/cliente/excluir/:cpf', (req, res) => {
 // EXCLUIR PACIENTE  -   JOSE
 
 
+// BUSCA POR NOME DO MEDICAMENTO  -  JOSE
+app.post('/buscarRemedio', (req, res) => {
+    const remedio = req.body.remedio
+    const sql = `SELECT * FROM medicamentos WHERE nome like '${remedio}%'`
+
+    conn.query(sql, function (err, data) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        const remedios = data
+        res.render('pesquisaRemedio', { layout: false, remedios })
+    })
+})
+// BUSCA POR NOME DO MEDICAMENTO  -  JOSE
+
+
 
 
 

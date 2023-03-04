@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
     const senha = req.body.senha
 
 
-    const sql = `SELECT * FROM medico WHERE cpf = ${cpf}`
+    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
             res.redirect('/medico/loginM_loginSenhaErrado')
             return
         } if (listarmedico.senha == senha) {
-            res.render('medicoId', { layout: false, listarmedico }) // res.redirect(`/medicoId/${cpf}`)
+            res.redirect(`/medicos/${cpf}`)      //res.render('medicoId', { layout: false, listarmedico }) 
         } else {
             res.redirect(`/medico/loginM_loginSenhaErrado`)
         }
@@ -147,10 +147,10 @@ app.get('/medicos', (req, res) => {
 
 
 // consulta um registro pelo id
-app.get('/medicos/:id', (req, res) => {
-    const id = req.params.id
+app.get('/medicos/:cpf', (req, res) => {
+    const cpf = req.params.cpf
 
-    const sql = `SELECT * FROM medico WHERE id = ${id}`
+    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -936,7 +936,7 @@ app.use(function (req, res, next) {
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',
-    port: '3307',
+    port: '3306',
     user: 'root',
     password: '',
     database: 'clinica_resilia'

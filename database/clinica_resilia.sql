@@ -122,7 +122,7 @@ CREATE TABLE `medico` (
   `nascimento` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `telefone` varchar(100) NOT NULL,
-  `cpf` int(11) NOT NULL,
+  `cpf` varchar(15) NOT NULL,
   `senha` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -131,7 +131,7 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, `senha`) VALUES
-(20, 'bruno pereira de carvalho pinto', '', 'brunocarvpinto@gmail.com', '(21) 9814-64062', 2147483647, ''),
+(20, 'bruno pereira de carvalho pinto', '', 'brunocarvpinto@gmail.com', '(21) 9814-64062', 2147483647, '4321'),
 (21, 'bruno', '', 'bruno@', '21', 1, ''),
 (22, 'teste', '', 'teste', 'teste', 0, '');
 

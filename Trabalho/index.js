@@ -756,7 +756,7 @@ app.get('/med/remove/:id', (req, res) => {
     })
 })
 
-
+// FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
 
 
 //Marcar consulta (Manoel)
@@ -960,5 +960,5 @@ app.listen(port, () => {
 
     //lembrar que toda vez que algum registro por deletado, o auto incremento vai continuar seguindo com a numeração, por conta de "registro vazio"
     //Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
-    // FIM DAS ROTAS DOS MEDICAMENTOS (RAFAEL)
+    
 })

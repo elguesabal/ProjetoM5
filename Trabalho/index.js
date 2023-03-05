@@ -601,6 +601,12 @@ app.post('/buscarRemedio', (req, res) => {
 // BUSCA POR NOME DO MEDICAMENTO  -  JOSE
 
 
+// PAGINA DO SQUAD   -   JOSE
+app.get('/squad', (req, res) => {
+    res.render('squad', { layout: false })
+})
+// PAGINA DO SQUAD   -   JOSE
+
 
 
 

@@ -146,12 +146,11 @@ app.get('/medicos', (req, res) => {
 })
 
 
+
 // consulta um registro pelo id
 app.get('/medicos/:cpf', (req, res) => {
     const cpf = req.params.cpf
-
-    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'`
-
+    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'` 
     conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
@@ -170,11 +169,20 @@ app.get('/medicos/:cpf', (req, res) => {
                 return
             }
             const listarExames = data
-            res.render('medicoId', { layout: false, listarmedico, listarExames })
+
+            const sqlConsulta = `SELECT * FROM consulta WHERE id_medico = ${listarmedico.id}`
+            conn.query(sqlConsulta, function (err, data){
+                if (err) {
+                    console.log(err)
+                    return
+                }
+            const listarConsulta = data;
+console.log(listarmedico.id);    
+            res.render('medicoId', { layout: false, listarmedico, listarExames,listarConsulta })
         })
     })
 })
-
+})
 
 // Editando informaçoes do medico
 

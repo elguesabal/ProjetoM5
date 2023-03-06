@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="d-flex justify-content-evenly">
+    {{!-- <div class="d-flex justify-content-evenly">
         {{#each remedios}}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -22,8 +22,29 @@
                 </div>
             </div>
         {{/each}}
-    </div>
-    
+    </div> --}}
+    <center>
+    {{#each remedios}}
+
+<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="{{urlmed}}" alt="Card image cap">
+  <div class="card-body">
+  <div class="card-title medlink">{{nome}} </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Dosagem: {{dosagem}}</li>
+    <li class="list-group-item">Composição: {{composicao}}</li>
+    <li class="list-group-item">Comprimidos: {{comprimidos}}</li>
+    <li class="list-group-item">Preço: {{preco}}</li>
+  
+</ul>
+</div>
+
+ {{/each}} 
+
+</center>
+
+
 </body>
 
 </html>

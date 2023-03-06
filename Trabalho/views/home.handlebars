@@ -66,12 +66,12 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
       <div class="container">
         <a class="navbar-brand" href="#!"><span style="color: #0dcaf0;">Clínica</span><span style="color: #615b5b;">Resilia</span></a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+        <button class="navbar-toggler navbar-toggler-left" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
               <a class="nav-link text-info" href="/loginM">Médico</a>
             </li>
             <li class="nav-item">
@@ -86,6 +86,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/receitaCad">Diagnósticos</a>
             </li>
+          </ul>
         </div>
 
         <form class="d-flex btn" role="search" action="/buscarRemedio" method="post" id="submitForm">

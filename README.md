@@ -14,4 +14,4 @@
 - Maiara: https://github.com/MaiaraRib388
 - Manoel: https://github.com/Man-noel
 - Rafael: https://github.com/KesleyMelchior
-- ~Ótavio~: https://github.com/Hoptavio
+- ~Ótavio: https://github.com/Hoptavio~

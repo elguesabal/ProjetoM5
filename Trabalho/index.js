@@ -968,7 +968,7 @@ app.use(function (req, res, next) {
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',
-    port: '3306',
+    port: '3307',
     user: 'root',
     password: '',
     database: 'clinica_resilia'

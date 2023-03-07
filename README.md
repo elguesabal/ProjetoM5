@@ -14,7 +14,7 @@ Uma clínica de saúde com preços acessáveis para você tratar do seu cuidado 
 
 
 ## **Ferramentas utilizadas**
- [![My Skills](https://skillicons.dev/icons?i=html,css,nodejs,mysql)](https://skillicons.dev)
+ [![My Skills](https://skillicons.dev/icons?i=html,css,nodejs,mysql,github	)](https://skillicons.dev)
 
 ## **Squad 🤝**
 

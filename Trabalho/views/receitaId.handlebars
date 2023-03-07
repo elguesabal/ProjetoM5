@@ -22,7 +22,7 @@
     <h1>Prescrição do(a) paciente {{listarclientes.nome}} </h1>
     <hr>
       <div id="boxButton">
-          <pre><a href="/receitaCad"> Fazer cadastro </a>  <a href="/"> Inicio</a> </pre>
+          <pre><a href="/receitaCad"> Fazer cadastro </a> <a href="/receita"> Ver cadastros </a>  <a href="/"> Inicio</a> </pre>
     </div>
     <hr>
     <p>Médico responsável pelo paciente - {{listarclientes.medico}}</p>
@@ -32,6 +32,8 @@
     <p>Telefone de contato -  {{listarclientes.telefone}}</p>
     <hr>
     <p>Tratamento indicado - {{listarclientes.remedio}}</p>
+    <hr>
+    <p>Prescrição - {{listarclientes.prescricao}}</p>
     <hr>
 
     <a href="/receita/editCad/{{listarclientes.id}}">Editar</a>

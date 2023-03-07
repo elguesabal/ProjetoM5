@@ -65,16 +65,27 @@
 
                </div>
 
-             <div class="form-control">
+         <div class="form-control">
 
           <label for="remedio">Receita:</label>
           <select name="remedio">
 
           {{#each listarMed}}
-         <option value="{{remedio}}"> {{nome}}</option>
+         <option value="{{nome}}"> {{nome}}</option>
          {{/each}}
           </select>
         
+
+        </div>
+         <div class="form-control">
+
+          <label for="prescricao">Prescrição:</label>
+          <input
+            type="text"
+            name="prescricao"
+            placeholder="Insira a Prescrição"
+            required
+          />
 
         </div>
                <br>

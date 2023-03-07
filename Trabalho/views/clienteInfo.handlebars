@@ -373,9 +373,41 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample2">
                             <div class="card card-body">
-algumas outras possibilidades
-<a href="https://getbootstrap.com/docs/5.3/components/card/" target="_blank" rel="noopener noreferrer">card</a>
-<a href="https://getbootstrap.com/docs/5.3/components/list-group/" target="_blank" rel="noopener noreferrer">list-group</a>
+                                 <div class="col-md-6" style="justify-content: center;">
+
+                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas
+                    </h1>
+
+                    <div class="row" style="justify-content: center;">
+
+                        {{#each diag2}}
+
+                        <div class="card text-dark bg-light" style="width: 16rem; margin: 3%">
+
+                            <div class="card-body">
+
+
+                                <h4 class="card-title" style="margin-bottom: 10px;"><strong>Consulta n.º
+                                        {{this.id}}</strong></h4>
+                                <p class="text-dark fs-6">
+                                    <strong>Paciente:</strong> {{nome}}
+                                    <br>
+                                    <strong>Medico:</strong> {{medico}}
+                                    <br>
+                                    <strong>Data:</strong> {{data}}
+                                    <br>
+                                    <br>
+                                    <strong>Receita:</strong> {{prescricao}}
+                                </p>
+
+                            </div>
+                        </div>
+
+                        {{/each}}
+
+
+                    </div>
+                </div>
                             </div>
                         </div>
                     </div>

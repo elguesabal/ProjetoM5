@@ -248,8 +248,8 @@ app.get('/medico/excluir/:id', (req, res) => {
 
 
 
-//Inicio da rota da prescrição (Otavio)
 
+//Inicio da rota da prescrição (Otavio)
 app.get('/receitaCad', (req, res) => {
     // id = req.body.id;
      const sql = `SELECT * FROM medicamentos` 
@@ -273,8 +273,10 @@ app.post('/receita/insertreceita', (req, res) => {
     const data = req.body.data
     const medico = req.body.medico
     const remedio = req.body.remedio
+    const prescricao = req.body.prescricao
 
-    const sql = `INSERT INTO receita (nome,cpf,telefone,idade,data,medico,remedio) VALUES ('${nome}','${cpf}','${telefone}','${idade}','${data}','${medico}','${remedio}')`
+    const sql = `INSERT INTO receita (nome,cpf,telefone,idade,data,medico,remedio,prescricao) VALUES ('${nome}',
+    '${cpf}','${telefone}','${idade}','${data}','${medico}','${remedio}','${prescricao}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -360,9 +362,10 @@ app.post('/receita/updateReceita', (req, res) => {
     const data = req.body.data
     const medico = req.body.medico
     const remedio = req.body.remedio
+    const prescricao = req.body.prescricao
 
-    const sql = `UPDATE receita SET nome = '${nome}', cpf = '${cpf}', telefone = '${telefone}'
-    , idade = '${idade}', data = '${data}', medico = '${medico}', remedio = '${remedio}' WHERE id = '${id}'`
+    const sql = `UPDATE receita SET nome = '${nome}',cpf = '${cpf}', telefone = '${telefone}'
+    , idade = '${idade}', data = '${data}', medico = '${medico}', remedio = '${remedio}', prescricao = '${prescricao}' WHERE id = '${id}'`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -392,8 +395,8 @@ app.get('/receita/remove/:id', (req, res) =>{
 })
 
 
-//Inicio da rota da prescrição (Otavio)
 
+//Fim da rota da prescrição (Otavio)
 
 
 
@@ -474,58 +477,67 @@ app.get('/cliente/loginP_loginSenhaErrado', (req, res) => {
 
 app.get('/cliente/:cpf', (req, res) => {
     const cpf = req.params.cpf
-    const sql = `SELECT * FROM paciente WHERE cpf = '${cpf}'`
-
-    conn.query(sql, function (err, data) {
+    
+    const diag = `SELECT * FROM receita WHERE cpf = '${cpf}'`
+    conn.query(diag, function (err, data) {
         if (err) {
             console.log(err)
             return
         }
+        const diag2 = data
 
-        const cliente = data[0]
-    
-        const sqlExame = `SELECT * FROM exames WHERE cpf_cliente = '${cpf}'`
-
-
-
-        conn.query(sqlExame, function (err, data){
+        const sql = `SELECT * FROM paciente WHERE cpf = '${cpf}'`
+        conn.query(sql, function (err, data) {
             if (err) {
-            console.log(err)
-            return
+                console.log(err)
+                return
             }
-            const listarExames = data
+
+            const cliente = data[0]
+        
+            const sqlExame = `SELECT * FROM exames WHERE cpf_cliente = '${cpf}'`
 
 
 
-            const sqlConsulta = `SELECT * FROM consulta WHERE consultacpf_cliente = '${cpf}'`
-
-            conn.query(sqlConsulta, function (err, data){
+            conn.query(sqlExame, function (err, data){
                 if (err) {
-                    console.log(err)
-                    return
+                console.log(err)
+                return
                 }
-            const listarConsulta = data
-    
-                
+                const listarExames = data
 
 
-            const sql = `SELECT id FROM medico`
 
-                conn.query(sql, function (err, data) {
+                const sqlConsulta = `SELECT * FROM consulta WHERE consultacpf_cliente = '${cpf}'`
+
+                conn.query(sqlConsulta, function (err, data){
                     if (err) {
                         console.log(err)
                         return
                     }
-            
-
+                const listarConsulta = data
+        
                     
-                    const id_medico = data
-                    function randomMedico(num) {
-                        let sorteio = Math.floor(Math.random() * num.length)
-                        return num[sorteio]
-                    }
-                    const medico = randomMedico(id_medico)
-                    res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta, medico })
+
+
+                const sql = `SELECT id FROM medico`
+
+                    conn.query(sql, function (err, data) {
+                        if (err) {
+                            console.log(err)
+                            return
+                        }
+                
+
+                        
+                        const id_medico = data
+                        function randomMedico(num) {
+                            let sorteio = Math.floor(Math.random() * num.length)
+                            return num[sorteio]
+                        }
+                        const medico = randomMedico(id_medico)
+                        res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta, medico,diag2 })
+                    })
                 })
             })
         })
@@ -614,8 +626,6 @@ app.get('/squad', (req, res) => {
     res.render('squad', { layout: false })
 })
 // PAGINA DO SQUAD   -   JOSE
-
-
 
 
 

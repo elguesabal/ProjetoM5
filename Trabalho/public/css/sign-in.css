@@ -4,8 +4,6 @@ body {
 }
 
 body {
-  display: flex;
-  align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
@@ -30,4 +28,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.botaoVoltar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.needs-validation {
+    margin-top: 20%;
 }

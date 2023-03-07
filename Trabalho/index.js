@@ -845,7 +845,7 @@ app.post('/marcar_exames/', (req, res) => {
             console.log(err)
         }
 
-        res.redirect('/')
+        res.redirect(`/medicos/${cpf_medico}`)
         console.log("Exame marcado com sucesso!")
     })
 })

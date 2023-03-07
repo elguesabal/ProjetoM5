@@ -14,7 +14,7 @@ Uma clínica de saúde com preços acessáveis para você tratar do seu cuidado 
 
 
 ## **Ferramentas utilizadas**
-
+ [![My Skills](https://skillicons.dev/icons?i=html,css,nodejs,mysql)](https://skillicons.dev)
 
 ## **Squad 🤝**
 
@@ -24,3 +24,5 @@ Uma clínica de saúde com preços acessáveis para você tratar do seu cuidado 
 - Manoel(Colaborador 2): https://github.com/Man-noel
 - Rafael:(Coo-facilitador) https://github.com/KesleyMelchior
 - ~Ótavio(Colaborador 3): https://github.com/Hoptavio~
+
+//aqui vai ficar o print da aba squad//

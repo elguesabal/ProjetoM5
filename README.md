@@ -3,7 +3,7 @@
 
 # Clinica Vitallis 🏥
 
-## **instruções para iniciar o servidor:**
+## **instruções para iniciar o servidor 💬**
 **// cd trabalho // dar o comando npm i express // npm start // localhost:4000**
 
 // :) 💬 
@@ -16,7 +16,7 @@ Uma clínica de saúde com preços acessáveis para você tratar do seu cuidado 
 //aqui vai ser inserida uma imagem da home do site//
 
 
-## **Ferramentas utilizadas**
+## **Ferramentas utilizadas 🛠️**
  [![My Skills](https://skillicons.dev/icons?i=html,css,nodejs,mysql,github	)](https://skillicons.dev)
 
 ## **Squad 🤝**

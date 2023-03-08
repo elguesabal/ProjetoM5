@@ -485,6 +485,7 @@ app.get('/cliente/:cpf', (req, res) => {
             return
         }
         const diag2 = data
+        
 
         const sql = `SELECT * FROM paciente WHERE cpf = '${cpf}'`
         conn.query(sql, function (err, data) {
@@ -536,7 +537,7 @@ app.get('/cliente/:cpf', (req, res) => {
                             return num[sorteio]
                         }
                         const medico = randomMedico(id_medico)
-                        res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta, medico,diag2 })
+                        res.render('clienteInfo', { layout: false, cliente, listarExames, listarConsulta, medico, diag2 })
                     })
                 })
             })
@@ -571,7 +572,7 @@ app.post('/cliente/edit', (req, res) => {
     const cpf = req.body.cpf
     const senha = req.body.senha
 
-    const sql = `UPDATE paciente SET nome = '${nome} ${sobrenome}', nascimento = '${nascimento}', email = '${email}', telefone = '${telefone}', WHERE cpf = '${cpf}'`
+    const sql = `UPDATE paciente SET nome = '${nome} ${sobrenome}', nascimento = '${nascimento}', email = '${email}', telefone = '${telefone}' WHERE cpf = '${cpf}'`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -978,7 +979,7 @@ app.use(function (req, res, next) {
 // conexão bd
 const conn = mysql.createConnection({
     host: '127.0.0.1',
-    port: '3307',
+    port: '3306',
     user: 'root',
     password: '',
     database: 'clinica_resilia'

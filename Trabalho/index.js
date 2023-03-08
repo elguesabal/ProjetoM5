@@ -509,14 +509,15 @@ app.get('/cliente/:cpf', (req, res) => {
 
 
 
-                const sqlConsulta = `SELECT * FROM consulta WHERE consultacpf_cliente = '${cpf}'`
+            const sqlConsulta = `SELECT nome, consulta.id, consulta.cliente, consulta.clientesobre,consulta.data, consulta.horario from medico inner join consulta on 
+            medico.id = consulta.id_medico where consulta.consultacpf_cliente = '${cpf}'`
 
-                conn.query(sqlConsulta, function (err, data){
-                    if (err) {
-                        console.log(err)
-                        return
-                    }
-                const listarConsulta = data
+            conn.query(sqlConsulta, function (err, data){
+                if (err) {
+                    console.log(err)
+                    return
+                }
+            const listarConsulta = data
         
                     
 

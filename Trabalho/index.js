@@ -968,6 +968,17 @@ app.get('/exames/remove/:id', (req, res) => {
 })
 //Fim da parte dos exames (Maiara)
 
+app.get('/remove/:id', (req, res) => {
+    const id = req.params.id
+    const sql = `DELETE FROM consulta WHERE id = ${id}`
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }res.redirect(req.get('referer'));
+})})
+
+
 
 
 // ROTA NAO EXISTENTE - JOSE

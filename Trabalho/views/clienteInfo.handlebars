@@ -489,6 +489,7 @@
                         </div>
                         <div class="modal-body">
                             {{#each listarConsulta}}
+                            <br>
                                 <ul class="list-group">
                                     <li class="list-group-item">Consulta Nº: {{this.id}}</li>
                                     <li class="list-group-item">Nome do paciente: {{cliente}} {{clientesobre}}</li>
@@ -496,12 +497,11 @@
                                     <li class="list-group-item">Data da consulta: {{data}}</li>
                                     <li class="list-group-item">Horário da consulta: {{horario}}</li>
                                 </ul>
-                                <br>
+                                <br><center>
+                                      <a class="btn btn-primary" href="/remove/{{id}}">Editar Consulta</a>
+                                  <a class="btn btn-primary" href="/remove/{{id}}">Cancelar Consulta</a>
+                         </center><br>
                             {{/each}}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>

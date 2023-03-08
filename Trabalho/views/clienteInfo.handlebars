@@ -8,7 +8,8 @@
     <title>Cliente {{cliente.nome}}</title>
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/css/style.css">
     <link href="/public/css/features.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/load.css">
@@ -22,98 +23,118 @@
 
     {{!-- TELA DE LOAD --}}
     <div id="load">
-    <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
     </div>
 
 
     {{!-- BOTAO DE VOLTAR AO TOPO --}}
     <a href="#">
-    <button class="back-to-top-btn d-flex justify-content-center align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-        </svg>
-    </button>
+        <button class="back-to-top-btn d-flex justify-content-center align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+            </svg>
+        </button>
     </a>
 
 
     {{!-- BOTOS DE REDES SOCIAIS --}}
     <div class="botoesLaterais">
-    <a href="https://facebook.com/" target="_blank" class="botao animation" style="background: #0004ff; border: 1px solid #0004ff; box-shadow: 0 0 0 0 rgba(0, 38, 255, 0.5);">  
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-        </svg>
-    </a>
+        <a href="https://facebook.com/" target="_blank" class="botao animation"
+            style="background: #0004ff; border: 1px solid #0004ff; box-shadow: 0 0 0 0 rgba(0, 38, 255, 0.5);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook"
+                viewBox="0 0 16 16">
+                <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+            </svg>
+        </a>
 
-    <a href="https://www.whatsapp.com/" target="_blank" class="botao animation" style="background: #09a513; border: 1px solid #09a513; box-shadow: 0 0 0 0 rgba(9, 165, 19, 0.50);">  
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-    </a>
+        <a href="https://www.whatsapp.com/" target="_blank" class="botao animation"
+            style="background: #09a513; border: 1px solid #09a513; box-shadow: 0 0 0 0 rgba(9, 165, 19, 0.50);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp"
+                viewBox="0 0 16 16">
+                <path
+                    d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+            </svg>
+        </a>
 
-    <a href="https://www.youtube.com/" target="_blank" class="botao animation" style="background: #ff0000; border: 1px solid #ff0000; box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);">  
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-        </svg>
-    </a>
+        <a href="https://www.youtube.com/" target="_blank" class="botao animation"
+            style="background: #ff0000; border: 1px solid #ff0000; box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-youtube"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+            </svg>
+        </a>
     </div>
 
 
     <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
-        <div class="container">
-        <a class="navbar-brand" href="#!"><span style="color: #0dcaf0;">Clínica</span><span style="color: #615b5b;">Vitallis</span></a>
-        <button class="navbar-toggler navbar-toggler-left" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item active">
-                <a class="nav-link text-info" href="/">Home</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-info" href="/loginM">Médico</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-info" href="/loginP">Paciente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-info" href="/squad">Squad</a>
-            </li>
-            </ul>
-        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+            <div class="container">
+                <a class="navbar-brand" href="#!"><span style="color: #0dcaf0;">Clínica</span><span
+                        style="color: #615b5b;">Vitallis</span></a>
+                <button class="navbar-toggler navbar-toggler-left" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                        <li class="nav-item active">
+                            <a class="nav-link text-info" href="/">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-info" href="/loginM">Médico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="/loginP">Paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="/squad">Squad</a>
+                        </li>
+                    </ul>
+                </div>
 
-        <form class="d-flex btn" role="search" action="/buscarRemedio" method="post" id="submitForm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16" id="comandoVoz">
-            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
-            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
-            </svg>
-            <input class="form-control me-2" type="search" placeholder="Busca de remédios" aria-label="Search" id="campoPesquisa" name="remedio">
-            <button class="btn btn-outline-info" type="submit">Buscar</button>
-        </form>
-        </div>
-    </nav>
-    <!-- Navbar -->
+                <form class="d-flex btn" role="search" action="/buscarRemedio" method="post" id="submitForm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-mic"
+                        viewBox="0 0 16 16" id="comandoVoz">
+                        <path
+                            d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
+                    </svg>
+                    <input class="form-control me-2" type="search" placeholder="Busca de remédios" aria-label="Search"
+                        id="campoPesquisa" name="remedio">
+                    <button class="btn btn-outline-info" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
+        <!-- Navbar -->
     </header>
 
 
     <div class="col-lg-11 mx-auto p-4 py-md-5" style="margin-top: 4%">
         <div class="d-flex align-items-start pb-3 mb-5 border-bottom">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-pulse" viewBox="0 0 16 16" style="margin-right: 3%;">
-                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z" />
-                <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-pulse"
+                viewBox="0 0 16 16" style="margin-right: 3%;">
+                <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Z" />
+                <path
+                    d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" />
             </svg>
             <span class="fs-4">Seja bem vindo {{cliente.nome}}</span>
         </div>
 
-   
+
         <main>
 
             <div class="row g-5 d-flex justify-content-evenly">
@@ -121,9 +142,12 @@
                 <div class="col-md-6">
                     <div class="row row-cols-1 row-cols-sm-2 g-4">
                         <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                                 </svg>
                             </div>
                             <h4 class="fw-semibold mb-0 fs-2">Nome:</h4>
@@ -131,11 +155,16 @@
                         </div>
 
                         <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
-                                    <path d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                    <path
+                                        d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                 </svg>
                             </div>
                             <h4 class="fw-semibold mb-0 fs-2">Nascimento:</h4>
@@ -143,10 +172,14 @@
                         </div>
 
                         <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-heading" viewBox="0 0 16 16">
-                                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-                                    <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z" />
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-card-heading" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                    <path
+                                        d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z" />
                                 </svg>
                             </div>
                             <h4 class="fw-semibold mb-0 fs-2">CPF:</h4>
@@ -154,9 +187,12 @@
                         </div>
 
                         <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                                 </svg>
                             </div>
                             <h4 class="fw-semibold mb-0 fs-2">Contato:</h4>
@@ -165,10 +201,14 @@
 
 
 
-                        <a class="col-md-5 d-flex align-items-start editarExcluir" href="/cliente/editar/{{cliente.cpf}}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                        <a class="col-md-5 d-flex align-items-start editarExcluir"
+                            href="/cliente/editar/{{cliente.cpf}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                             </svg>
                             <div>
                                 <h3 class="fw-bold mb-0 fs-4">Editar usuário</h3>
@@ -176,10 +216,14 @@
                             </div>
                         </a>
 
-                        <div class="col-md-5 d-flex align-items-start editarExcluir" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        <div class="col-md-5 d-flex align-items-start editarExcluir" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-trash" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                <path fill-rule="evenodd"
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                             </svg>
                             <div>
                                 <h3 class="fw-bold mb-0 fs-4">Apagar conta</h3>
@@ -189,16 +233,21 @@
 
 
 
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja realmente deletar?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja realmente deletar?
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">Note que todos os dados serão excluidos permanentemente.</div>
+                                    <div class="modal-body">Note que todos os dados serão excluidos permanentemente.
+                                    </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
                                         <a href="/cliente/excluir/{{cliente.cpf}}" class="btn btn-primary">Excluir</a>
                                     </div>
                                 </div>
@@ -209,14 +258,15 @@
                 </div>
 
 
-                <div class="col-md-4"> 
-                    
+                <div class="col-md-4">
+
                     <h4 class="mb-3">Marque sua consulta</h4>
-                 <form action="/marcarConsulta" method="post" class="needs-validation" novalidate>
+                    <form action="/marcarConsulta" method="post" class="needs-validation" novalidate>
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <label for="cliente" class="form-label">Nome</label>
-                                <input type="text" class="form-control" name="cliente" id="cliente" placeholder="Insira seu nome" value="" required>
+                                <input type="text" class="form-control" name="cliente" id="cliente"
+                                    placeholder="Insira seu nome" value="" required>
                                 <div class="invalid-feedback">
 
                                     Por favor insira seu nome.
@@ -225,15 +275,18 @@
 
                             <div class="col-sm-6">
                                 <label for="clientesobre" class="form-label">Sobrenome</label>
-                                <input type="text" class="form-control" name="clientesobre" id="clientesobre" placeholder="Insira seu sobrenome" value="" required>
+                                <input type="text" class="form-control" name="clientesobre" id="clientesobre"
+                                    placeholder="Insira seu sobrenome" value="" required>
                                 <div class="invalid-feedback">
-                                    Por favor insira um médico.                          
-                                       </div>
+                                    Por favor insira um médico.
+                                </div>
                             </div>
 
                             <div class="col-12">
-                                <label for="email" class="form-label">Email para contato<span class="text-muted">(Optional)</span></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Insira seu e-mail">
+                                <label for="email" class="form-label">Email para contato<span
+                                        class="text-muted">(Optional)</span></label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Insira seu e-mail">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
                                 </div>
@@ -257,7 +310,7 @@
 
                             <div class="col-md-6">
                                 <label for="horario" class="form-label">Horário</label>
-                                <select class="form-select" name="horario"  id="horario" required>
+                                <select class="form-select" name="horario" id="horario" required>
                                     <option value="">Escolher...</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -278,7 +331,8 @@
 
                             <div class="col-md-12">
                                 <label for="sintomas" class="form-label">Sintomas:</label>
-                                <textarea for="sintomas" class="form-control" name="sintomas" id="sintomas" placeholder="Descreva seus sintomas..." rows="3" required></textarea>
+                                <textarea for="sintomas" class="form-control" name="sintomas" id="sintomas"
+                                    placeholder="Descreva seus sintomas..." rows="3" required></textarea>
                                 <div class="invalid-feedback">
                                     Por favor insira seus sintomas.
                                 </div>
@@ -287,12 +341,14 @@
 
                         <hr class="my-4">
 
-                            <div class="col-1">
-                               <input type="text" class="form-control" name="cpf_cliente" id="cpf_cliente" hidden value={{cliente.cpf}}>
-                                <div class="invalid-feedback">
-                                </div>
-                               <input type="text" class="form-control" name="id_medico" id="id_medico" hidden value={{medico.id}}>
+                        <div class="col-1">
+                            <input type="text" class="form-control" name="cpf_cliente" id="cpf_cliente" hidden
+                                value={{cliente.cpf}}>
+                            <div class="invalid-feedback">
                             </div>
+                            <input type="text" class="form-control" name="id_medico" id="id_medico" hidden
+                                value={{medico.id}}>
+                        </div>
                         <button class="w-100 btn btn-primary btn-lg" type="submit">Agendar</button>
                     </form>
                 </div>
@@ -305,26 +361,30 @@
 
             <div class="dropdown-menu position-static d-flex align-items-stretch p-3 rounded-3 shadow-lg w-600px">
                 <nav class="gap-2 col-12 d-flex justify-content-around">
-                    <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start col-4 position-relative" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            n
-                            <span class="visually-hidden">unread messages</span>
+                    <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start col-4 position-relative"
+                        data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+                        aria-controls="multiCollapseExample1">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{listarExames.length}}<span class="visually-hidden">unread messages</span>
                         </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z" />
                         </svg>
                         <div>
                             <strong class="d-block">Exames</strong>
                             <small>Veja os resultados de seus exames.</small>
                         </div>
                     </a>
-                    <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start col-4 position-relative" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            n
-                            <span class="visually-hidden">unread messages</span>
+                    <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start col-4 position-relative"
+                        data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
+                        aria-controls="multiCollapseExample2">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{diag2.length}}<span class="visually-hidden">unread messages</span>
                         </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-capsule" viewBox="0 0 16 16">
-                            <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-capsule" viewBox="0 0 16 16">
+                            <path
+                                d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
                         </svg>
                         <div>
                             <strong class="d-block">Receita médica</strong>
@@ -335,79 +395,68 @@
             </div>
 
             <br>
-
             <div class="col-md-12">
                 <div class="row">
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="card card-body">
-
-{{!-- RECOMENDACAO --}}
-<table class="table table-striped table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Exame</th>
-      <th scope="col">Nome do Médico</th>
-      <th scope="col">Data</th>
-      <th scope="col">Horário</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each listarExames}}
-      <tr>
-        <th scope="row">{{id}}</th>
-        <td>{{exame}}</td>
-        <td>{{medico}}</td>
-        <td>{{data}}</td>
-        <td>{{horario}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-{{!-- RECOMENDACAO --}}
-            </div>
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Exame</th>
+                                            <th scope="col">Nome do Médico</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Horário</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each listarExames}}
+                                        <tr>
+                                            <th scope="row">{{id}}</th>
+                                            <td>{{exame}}</td>
+                                            <td>{{medico}}</td>
+                                            <td>{{data}}</td>
+                                            <td>{{horario}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample2">
                             <div class="card card-body">
-                                 <div class="col-md-6" style="justify-content: center;">
+                                <div class="col-md-6" style="justify-content: center;">
 
-                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas
-                    </h1>
+                                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas</h1>
 
-                    <div class="row" style="justify-content: center;">
+                                    <div class="row" style="justify-content: center;">
 
-                        {{#each diag2}}
+                                        {{#each diag2}}
 
-                        <div class="card text-dark bg-light" style="width: 16rem; margin: 3%">
+                                        <div class="card text-dark bg-light" style="width: 16rem; margin: 3%">
+                                            <div class="card-body">
+                                                <h4 class="card-title" style="margin-bottom: 10px;"><strong>Consulta n.º {{this.id}}</strong></h4>
+                                                <p class="text-dark fs-6">
+                                                    <strong>Paciente:</strong> {{nome}}
+                                                    <br>
+                                                    <strong>Medico:</strong> {{medico}}
+                                                    <br>
+                                                    <strong>Data:</strong> {{data}}
+                                                    <br>
+                                                    <br>
+                                                    <strong>Receita:</strong> {{prescricao}}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                            <div class="card-body">
+                                        {{/each}}
 
-
-                                <h4 class="card-title" style="margin-bottom: 10px;"><strong>Consulta n.º
-                                        {{this.id}}</strong></h4>
-                                <p class="text-dark fs-6">
-                                    <strong>Paciente:</strong> {{nome}}
-                                    <br>
-                                    <strong>Medico:</strong> {{medico}}
-                                    <br>
-                                    <strong>Data:</strong> {{data}}
-                                    <br>
-                                    <br>
-                                    <strong>Receita:</strong> {{prescricao}}
-                                </p>
-
-                            </div>
-                        </div>
-
-                        {{/each}}
-
-
-                    </div>
-                </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -415,141 +464,121 @@
             </div>
 
 
-{{!-- RECOMENDACAO --}}
-<br><br>
+            {{!-- RECOMENDACAO --}}
+            <br><br>
 
-<div class="list-group">
-  <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#medicamento1{{!-- aki o id substitui o numero --}}">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Consultas Marcadas</h5>
-    </div>
-   </a>
-  <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#medicamento2{{!-- aki o id substitui o numero --}}">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-muted">And some muted small print.</small>
-  </a>
-  <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#medicamento3{{!-- aki o id substitui o numero --}}">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-muted">And some muted small print.</small>
-  </a>
-</div>
+            <div class="list-group">
+                <a class="btn list-group-item list-group-item-action" data-bs-toggle="modal"
+                    data-bs-target="#medicamento1{{!-- aki o id substitui o numero --}}">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Consultas Marcadas</h5>
+                    </div>
+                </a>
+            </div>
 
 
+            <!-- Modal -->
+            <div class="modal fade" id="medicamento1{{!-- aki o id substitui o numero --}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Consultas do paciente {{cliente.nome}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{#each listarConsulta}}
+                                <ul class="list-group">
+                                    <li class="list-group-item">Consulta Nº: {{this.id}}</li>
+                                    <li class="list-group-item">Nome do paciente: {{cliente}} {{clientesobre}}</li>
+                                    <li class="list-group-item">Data da consulta: {{data}}</li>
+                                    <li class="list-group-item">Horário da consulta: {{horario}}</li>
+                                </ul>
+                                <br>
+                            {{/each}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<!-- Modal -->
-<div class="modal fade" id="medicamento1{{!-- aki o id substitui o numero --}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Consultas do paciente {{cliente.nome}}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        {{#each listarConsulta}}
-<ul class="list-group">
-  <li class="list-group-item">Consulta Nº: {{this.id}}</li>
-  <li class="list-group-item">Nome do paciente: {{cliente}} {{clientesobre}}</li>
-  <li class="list-group-item">Data da consulta: {{data}}</li>
-  <li class="list-group-item">Horário da consulta: {{horario}}</li>
-</ul>
-<br>
-{{/each}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="modal fade" id="medicamento2{{!-- aki o id substitui o numero --}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            medicamento 2
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="modal fade" id="medicamento2{{!-- aki o id substitui o numero --}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        medicamento 2
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="medicamento3{{!-- aki o id substitui o numero --}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        medicamento 3
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-{{!-- RECOMENDACAO --}}
-
-
+            <div class="modal fade" id="medicamento3{{!-- aki o id substitui o numero --}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">medicamento 3</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
 
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-info">&copy; 2023 Company, Inc</p>
+                <p class="col-md-4 mb-0 text-info">&copy; 2023 Company, Inc</p>
 
-            <a href="/"
-                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap" />
-                </svg>
-            </a>
+                <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="/" class="nav-link px-2 text-info">Home</a></li>
-                <li class="nav-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><a href="#"
-                    class="nav-link px-2 text-info">Game</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-info">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-info">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-info">About</a></li>
-            </ul>
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="/" class="nav-link px-2 text-info">Home</a></li>
+                    <li class="nav-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><a href="#" class="nav-link px-2 text-info">Game</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-info">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-info">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-info">About</a></li>
+                </ul>
             </footer>
         </div>
 
 
         <!-- Modal  -  JOGO -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mario</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Mario</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="//www.retrogames.cc/embed/20875-dr-mario-japan-usa-rev-a.html" width="100%" height="350px" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <iframe src="//www.retrogames.cc/embed/20875-dr-mario-japan-usa-rev-a.html" width="100%" height="350px" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-            </div>
             </div>
         </div>
 
@@ -563,4 +592,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="/public/javascript/checkout.js"></script>
 </body>
+
 </html>

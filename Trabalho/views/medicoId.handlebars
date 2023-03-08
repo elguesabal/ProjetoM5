@@ -445,7 +445,7 @@
                 {{!-- consultas e marcar exames --}}
                 <div class="col-md-6" style="justify-content: center;">
 
-                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas realizadas
+                    <h1 class="fw-semibold mb-0 fs-1" style="padding-bottom: 10%; margin-left:8%">Consultas marcadas
                     </h1>
 
                     <div class="row" style="justify-content: center;">
@@ -469,12 +469,11 @@
                                     <strong>Sintomas:</strong> {{sintomas}}
                                 </p>
 
-                                <div class="form-check form-switch" style="margin-bottom: 5%;">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Consulta
+                         <div class="form-check form-switch" style="margin-bottom: 5%;">
+                                    <input class="form-check-input" onchange = "window.location.href='/remove/{{id}}'" type="checkbox" id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault" >Consulta
                                         realizada</label>
                                 </div>
-
 
                                 <a class="btn btn-primary" href="/marcar_exames/">Marcar exame</a>
 

@@ -978,6 +978,40 @@ app.get('/remove/:id', (req, res) => {
         }res.redirect(req.get('referer'));
 })})
 
+app.get('/editarC/:id', (req, res) => {
+    const id = req.params.id
+    const sql = `SELECT * FROM consulta WHERE id = ${id}`
+
+    conn.query(sql, function (err, data){
+        if (err) {
+        console.log(err)
+        return
+        }
+        const editarconsulta = data[0]
+        res.render('editarConsulta', { layout: false, editarconsulta })
+    })
+})
+app.post('/editarC', (req, res) => {
+    const id = req.body.id
+    const cliente = req.body.cliente
+    const clientesobre = req.body.clientesobre
+    const data = req.body.data
+    const horario = req.body.horario
+    
+    
+    
+    const sql = `UPDATE consulta SET  cliente = '${cliente}', clientesobre ='${clientesobre}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
+    
+    conn.query(sql, function (err) {
+        if (err) {
+            console.log(err)
+            return
+        }
+
+        res.redirect('back');
+    })
+})
+
 
 
 

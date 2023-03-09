@@ -22,11 +22,11 @@ Uma clínica de saúde com preços acessíveis para você tratar do seu cuidado 
 ## **Squad 🤝**
 
 - Manoel (Gestor de conhecimento): https://github.com/Man-noel
-- José:(Gestor de gente e engajamento): https://github.com/elguesabal
+- José (Gestor de gente e engajamento): https://github.com/elguesabal
 - Rafael (Co-facilitador) https://github.com/KesleyMelchior
 - Maiara (Colaborador 1): https://github.com/MaiaraRib388
 - Bruno (Colaborador 2): https://github.com/Bryhnu
-- Ótavio (Colaborador 3): https://github.com/Hoptavio
+- Otavio (Colaborador 3): https://github.com/Hoptavio
 
 //aqui vai ficar o print da aba squad//
 

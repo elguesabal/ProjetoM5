@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Mar-2023 às 19:54
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.0.25
+-- Tempo de geração: 09-Mar-2023 às 18:44
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,14 +37,15 @@ CREATE TABLE `consulta` (
   `sintomas` varchar(300) DEFAULT NULL,
   `consultacpf_cliente` varchar(15) NOT NULL,
   `id_medico` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `consulta`
 --
 
 INSERT INTO `consulta` (`id`, `data`, `horario`, `cliente`, `clientesobre`, `email`, `sintomas`, `consultacpf_cliente`, `id_medico`) VALUES
-(5, 'Quarta-feira', '14:00', 'Maria', 'Bonita', 'maria_bonita@gmail.com', 'Dor de cabeça e no corpo.', '111.111.111-11', '29');
+(1, 'Quarta-feira', '14:00', 'Maria', 'Bonita', 'maria_bonita@gmail.com', 'Dor de cabeça e no corpo.', '111.111.111-11', '29'),
+(6, 'Quarta-feira', '12:00', 'Maria', 'Bonita', 'maria_bonita@gmail.com', 'Outra derrota do mengão.', '111.111.111-11', '29');
 
 -- --------------------------------------------------------
 
@@ -61,14 +62,14 @@ CREATE TABLE `exames` (
   `cpf_cliente` varchar(15) NOT NULL,
   `data` varchar(50) DEFAULT NULL,
   `horario` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `exames`
 --
 
 INSERT INTO `exames` (`id`, `exame`, `medico`, `cpf_medico`, `paciente`, `cpf_cliente`, `data`, `horario`) VALUES
-(9, 'Hemograma', 'Dr. Lampião', '', 'Maria Bonita', '111.111.111-11', 'Terça-feira', '11:00:00');
+(9, 'Hemograma', 'Dr. Lampião', '', 'Maria Bonita', '111.111.111-11', 'Ter?a-feira', '11:00:00');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `medicamentos` (
   `comprimidos` varchar(30) NOT NULL,
   `preco` varchar(30) NOT NULL,
   `urlmed` mediumblob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `medicamentos`
@@ -124,7 +125,7 @@ CREATE TABLE `medico` (
   `telefone` varchar(100) NOT NULL,
   `cpf` varchar(15) NOT NULL,
   `senha` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `medico`
@@ -133,10 +134,10 @@ CREATE TABLE `medico` (
 INSERT INTO `medico` (`id`, `nome`, `nascimento`, `email`, `telefone`, `cpf`, `senha`) VALUES
 (24, 'Matheus Osvaldo Caldeira', '1970-01-08', 'matheus.pedro.caldeira@sociedadeweb.com.br', '(21) 98959-3107', '836.188.087-98', 'TMRWNIOSCF'),
 (25, 'Yago Osvaldo Peixoto', '1951-02-27', 'yago.osvaldo.peixoto@brasildakar.com.br', '(22) 99523-0597', '855.640.607-68', 'FIP5CeWofK'),
-(26, 'Fábio Leandro Costa', '1987-02-04', 'fabio-costa93@fabiooliva.com.br', '(21) 99805-0298', '932.727.507-11', 'oMfO8Yea1o'),
-(27, 'Cecília Giovanna Farias', '1976-01-24', 'cecilia_giovanna_farias@fitttransportes.com.br', '(21) 98731-2847', '090.849.727-08', 'R1crugAwLL'),
+(26, 'F?bio Leandro Costa', '1987-02-04', 'fabio-costa93@fabiooliva.com.br', '(21) 99805-0298', '932.727.507-11', 'oMfO8Yea1o'),
+(27, 'Cec?lia Giovanna Farias', '1976-01-24', 'cecilia_giovanna_farias@fitttransportes.com.br', '(21) 98731-2847', '090.849.727-08', 'R1crugAwLL'),
 (28, 'Pietro Ryan Nogueira', '1976-02-27', 'pietroryannogueira@demasi.com.br', '(21) 99441-7732', '185.395.857-31', 'nygz2GSLZ7'),
-(29, 'Lampião', '1965-05-02', 'lamp@gmail.com', '(21) 98765-4321', '222.222.222-22', 'lampiao123');
+(29, 'Lampi?o', '1965-05-02', 'lamp@gmail.com', '(21) 98765-4321', '222.222.222-22', 'lampiao123');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ CREATE TABLE `paciente` (
   `telefone` varchar(15) DEFAULT NULL,
   `cpf` varchar(15) DEFAULT NULL,
   `senha` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `paciente`
@@ -182,7 +183,16 @@ CREATE TABLE `receita` (
   `medico` varchar(255) NOT NULL,
   `remedio` varchar(255) NOT NULL,
   `prescricao` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `receita`
+--
+
+INSERT INTO `receita` (`id`, `nome`, `cpf`, `telefone`, `idade`, `data`, `medico`, `remedio`, `prescricao`) VALUES
+(1, 'Maria Bonita', '111.111.111-11', 981157936, 23, '2023-03-08', 'Lamapião', 'Concerta', 'Nunca mais veja um jogo do Flamengo'),
+(2, 'Maria Bonita', '111.111.111-11', 981157936, 23, '2023-03-18', 'Lamapião', 'Dorflex', 'Para de acreditar nesse time desgraçado'),
+(3, 'joao', '154.235.153-5', 123, 21, '2023-03-09', 'Teste', 'Omeprazol', 'oi');
 
 --
 -- Índices para tabelas despejadas
@@ -232,7 +242,7 @@ ALTER TABLE `receita`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `exames`
@@ -262,7 +272,7 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de tabela `receita`
 --
 ALTER TABLE `receita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

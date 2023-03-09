@@ -8,6 +8,13 @@
 
 // :) 💬 
 
+## **Instalação ⚙** 
+**npm init  <br/>
+npm i express  <br/>
+npm i mysql  <br/>
+npm install --save-dev  <br/>
+npm i handlebars**
+
 ## **Sobre o site 💊**
 Uma clínica de saúde com preços acessíveis para você tratar do seu cuidado e bem estar! Ela foi pensada na facilidade tanto do paciente quanto do médico, para uma navegação simples e sem complicações e com um design minimalista! 
  Já em questão ao nosso médico, foi pensando em um sistema de administração sobre as informações dos medicamentos!

@@ -28,7 +28,7 @@ Uma clínica de saúde com preços acessíveis para você tratar do seu cuidado 
 - Bruno (Colaborador 2): https://github.com/Bryhnu
 - Otavio (Colaborador 3): https://github.com/Hoptavio
 
-//aqui vai ficar o print da aba squad//
+![image](https://github.com/Man-noel/ProjetoM5/blob/main/ReadmeImages/SQUAD.png?raw=true)
 
 
 

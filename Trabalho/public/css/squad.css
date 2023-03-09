@@ -130,3 +130,8 @@ section{
     text-decoration: none;
     color: white;
 }
+
+.tamanhoFoto{
+    height: 180px ;
+    width: 200px;
+  }

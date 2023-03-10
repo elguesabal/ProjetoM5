@@ -4,16 +4,13 @@
 # Clinica Vitallis 🏥
 
 ## **instruções para iniciar o servidor 💬**
-**// cd trabalho // dar o comando npm i express // npm start // localhost:4000**
+Entre na pasta dos arquivos pelo terminal. <br/>
+Digite **npm i express** para instalar o express.  <br/>
+Digite **npm i mysql** para instalar o MySQL.  <br/>
+Digite **npm install handlebars** para instalar o Handlebars.  <br/>
+Agora para rodar o servidor digite **npm run start**.  <br/>
+Pronto! Agora só acessar **http://localhost:4000** pelo navegador.  <br/>
 
-// :) 💬 
-
-## **Instalação ⚙** 
-**npm init  <br/>
-npm i express  <br/>
-npm i mysql  <br/>
-npm install --save-dev  <br/>
-npm i handlebars**
 
 ## **Sobre o site 💊**
 Uma clínica de saúde com preços acessíveis para você tratar do seu cuidado e bem estar! Ela foi pensada na facilidade tanto do paciente quanto do médico, para uma navegação simples e sem complicações e com um design minimalista! 

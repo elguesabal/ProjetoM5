@@ -8,6 +8,7 @@ Entre na pasta dos arquivos pelo terminal. <br/>
 Digite **npm i express** para instalar o express.  <br/>
 Digite **npm i mysql** para instalar o MySQL.  <br/>
 Digite **npm install handlebars** para instalar o Handlebars.  <br/>
+Digite **npm install --save-dev nodemon** para instalar o nodemon.  <br/>
 Agora para rodar o servidor digite **npm run start**.  <br/>
 Pronto! Agora só acessar **http://localhost:4000** pelo navegador.  <br/>
 

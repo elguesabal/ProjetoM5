@@ -6,7 +6,8 @@
 ## **instruções para iniciar o servidor 💬**
 Entre na pasta dos arquivos pelo terminal. <br/>
 Digite **npm i express** para instalar o express.  <br/>
-Digite **npm i mysql** para instalar o MySQL.  <br/>
+<strike>Digite **npm i mysql** para instalar o MySQL.</strike> (Este comando era utilizado para banco de dados local)  <br/>
+Digite **npm install dotenv mysql2** para instalar o MySQL. (Este comando é utilizado para banco de dados online)  <br/>
 Digite **npm install handlebars** para instalar o Handlebars.  <br/>
 Digite **npm install --save-dev nodemon** para instalar o nodemon.  <br/>
 Agora para rodar o servidor digite **npm run start**.  <br/>

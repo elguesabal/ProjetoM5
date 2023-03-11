@@ -1,7 +1,10 @@
 // imports
 const express = require('express')
 const exphbs = require('express-handlebars')
-const mysql = require('mysql')
+// const mysql = require('mysql')           ANTIGO BANCO DE DADOS LOCAL DESATIVADO
+require('dotenv').config()              // NOVO BANCO DE DADOS ONLINE NO PlanetScale
+const mysql = require('mysql2')              // NOVO BANCO DE DADOS ONLINE NO PlanetScale
+
 
 const port = 4000
 
@@ -54,7 +57,7 @@ app.get('/home', (req, res) => {
 // page login
 app.get('/loginM', (req, res) => {
     const senhaErrada = "none"
-    res.render('loginM', { layout: false , senhaErrada })
+    res.render('loginM', { layout: false, senhaErrada })
 
 })
 
@@ -79,7 +82,7 @@ app.post('/login', (req, res) => {
         }
 
         const listarmedico = data[0]
-        
+
         if (listarmedico == undefined) {
             res.redirect('/medico/loginM_loginSenhaErrado')
             return
@@ -150,7 +153,7 @@ app.get('/medicos', (req, res) => {
 // consulta um registro pelo id
 app.get('/medicos/:cpf', (req, res) => {
     const cpf = req.params.cpf
-    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'` 
+    const sql = `SELECT * FROM medico WHERE cpf = '${cpf}'`
     conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
@@ -160,10 +163,10 @@ app.get('/medicos/:cpf', (req, res) => {
         const listarmedico = data[0]
 
 
-    
+
         const sqlExame = `SELECT * FROM exames WHERE cpf_medico = '${cpf}'` //slq exames
 
-        conn.query(sqlExame, function (err, data){
+        conn.query(sqlExame, function (err, data) {
             if (err) {
                 console.log(err)
                 return
@@ -171,17 +174,17 @@ app.get('/medicos/:cpf', (req, res) => {
             const listarExames = data
 
             const sqlConsulta = `SELECT * FROM consulta WHERE id_medico = ${listarmedico.id}`
-            conn.query(sqlConsulta, function (err, data){
+            conn.query(sqlConsulta, function (err, data) {
                 if (err) {
                     console.log(err)
                     return
                 }
-            const listarConsulta = data;
-console.log(listarmedico.id);    
-            res.render('medicoId', { layout: false, listarmedico, listarExames,listarConsulta })
+                const listarConsulta = data;
+                console.log(listarmedico.id);
+                res.render('medicoId', { layout: false, listarmedico, listarExames, listarConsulta })
+            })
         })
     })
-})
 })
 
 // Editando informaçoes do medico
@@ -252,16 +255,16 @@ app.get('/medico/excluir/:id', (req, res) => {
 //Inicio da rota da prescrição (Otavio)
 app.get('/receitaCad', (req, res) => {
     // id = req.body.id;
-     const sql = `SELECT * FROM medicamentos` 
+    const sql = `SELECT * FROM medicamentos`
 
     conn.query(sql, function (err, data) {
-       if (err) {
+        if (err) {
             console.log(err)
         }
-         const listarMed = data
-     console.log(listarMed);
-     
-     res.render('receitaCad', { layout: false , listarMed })
+        const listarMed = data
+        console.log(listarMed);
+
+        res.render('receitaCad', { layout: false, listarMed })
     })
 })
 //receitaCad <-
@@ -338,16 +341,16 @@ app.get('/receita/editCad/:id', (req, res) => {
         }
 
         const editarReceita = data[0]
-        const med = `SELECT * FROM medicamentos` 
+        const med = `SELECT * FROM medicamentos`
 
         conn.query(med, function (err, data) {
-           if (err) {
+            if (err) {
                 console.log(err)
             }
-             const listarMed = data
-         console.log(listarMed);
-         
-         res.render('editCad', { layout: false, editarReceita,listarMed })
+            const listarMed = data
+            console.log(listarMed);
+
+            res.render('editCad', { layout: false, editarReceita, listarMed })
         })
     })
 })
@@ -378,13 +381,13 @@ app.post('/receita/updateReceita', (req, res) => {
 })
 
 // excluindo a prescrição
-app.get('/receita/remove/:id', (req, res) =>{
+app.get('/receita/remove/:id', (req, res) => {
     const id = req.params.id
 
     const sql = `DELETE FROM receita WHERE id = '${id}'`
 
-    conn.query(sql, function(err){
-        if(err){
+    conn.query(sql, function (err) {
+        if (err) {
             console.log(err)
             return;
         }
@@ -477,7 +480,7 @@ app.get('/cliente/loginP_loginSenhaErrado', (req, res) => {
 
 app.get('/cliente/:cpf', (req, res) => {
     const cpf = req.params.cpf
-    
+
     const diag = `SELECT * FROM receita WHERE cpf = '${cpf}'`
     conn.query(diag, function (err, data) {
         if (err) {
@@ -485,7 +488,7 @@ app.get('/cliente/:cpf', (req, res) => {
             return
         }
         const diag2 = data
-        
+
 
         const sql = `SELECT * FROM paciente WHERE cpf = '${cpf}'`
         conn.query(sql, function (err, data) {
@@ -495,43 +498,43 @@ app.get('/cliente/:cpf', (req, res) => {
             }
 
             const cliente = data[0]
-        
+
             const sqlExame = `SELECT * FROM exames WHERE cpf_cliente = '${cpf}'`
 
 
 
-            conn.query(sqlExame, function (err, data){
+            conn.query(sqlExame, function (err, data) {
                 if (err) {
-                console.log(err)
-                return
+                    console.log(err)
+                    return
                 }
                 const listarExames = data
 
 
 
-            const sqlConsulta = `SELECT nome, consulta.id, consulta.cliente, consulta.clientesobre,consulta.data, consulta.horario from medico inner join consulta on 
+                const sqlConsulta = `SELECT nome, consulta.id, consulta.cliente, consulta.clientesobre,consulta.data, consulta.horario from medico inner join consulta on 
             medico.id = consulta.id_medico where consulta.consultacpf_cliente = '${cpf}'`
 
-            conn.query(sqlConsulta, function (err, data){
-                if (err) {
-                    console.log(err)
-                    return
-                }
-            const listarConsulta = data
-        
-                    
+                conn.query(sqlConsulta, function (err, data) {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+                    const listarConsulta = data
 
 
-                const sql = `SELECT id FROM medico`
+
+
+                    const sql = `SELECT id FROM medico`
 
                     conn.query(sql, function (err, data) {
                         if (err) {
                             console.log(err)
                             return
                         }
-                
 
-                        
+
+
                         const id_medico = data
                         function randomMedico(num) {
                             let sorteio = Math.floor(Math.random() * num.length)
@@ -656,7 +659,7 @@ app.post('/medicamentos/receber', (req, res) => {
     const composicao = req.body.composicao
     const comprimidos = req.body.comprimidos
     const preco = req.body.preco
-    
+
     const urlmed = req.body.urlmed
     const sql = `INSERT INTO medicamentos (nome, dosagem, composicao, comprimidos, preco, urlmed) VALUES ('${nome}', '${dosagem}', '${composicao}', '${comprimidos}', '${preco}', '${urlmed}')`
 
@@ -758,8 +761,8 @@ app.post('/updatemed', (req, res) => {
 
 
 
- //ROTA DE BUSCA
- app.get('/busca', (req, res) => {
+//ROTA DE BUSCA
+app.get('/busca', (req, res) => {
     res.render('busca(medicamentos)', { layout: false })
 
 })
@@ -771,14 +774,14 @@ app.post('/busc/', (req, res) => {
 
     const sql = `SELECT * FROM medicamentos where id = ${id}`
 
-    conn.query(sql, function(err, data){
-        if(err){
+    conn.query(sql, function (err, data) {
+        if (err) {
             console.log(err)
             return
         }
 
-        const listarMed = data [0]
-        res.render('getmed(medicamentos)', {  layout: false, listarMed } )
+        const listarMed = data[0]
+        res.render('getmed(medicamentos)', { layout: false, listarMed })
 
     })
 })
@@ -815,7 +818,7 @@ app.post('/marcarConsulta', (req, res) => {
     const id_medico = req.body.id_medico
     const sql = `INSERT INTO consulta (data, horario, cliente,clientesobre, email, sintomas, consultacpf_cliente,id_medico) VALUES ('${data}','${horario}','${cliente}','${clientesobre}','${email}','${sintomas}','${cpf_cliente}',${id_medico})`
     const sql1 = `SELECT id FROM medico`
-console.log(id_medico)
+    console.log(id_medico)
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
@@ -825,14 +828,14 @@ console.log(id_medico)
                 console.log(err)
                 return
             }
-        
-        
-            
-        console.log("Consulta marcada!")
-        res.redirect(`/cliente/${cpf_cliente}`)
-    })
 
-})
+
+
+            console.log("Consulta marcada!")
+            res.redirect(`/cliente/${cpf_cliente}`)
+        })
+
+    })
 })
 //inicio da parte dos exames (Maiara)
 
@@ -846,7 +849,7 @@ app.post('/marcar_exames/', (req, res) => {
     const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
-    
+
 
 
     const sql = `INSERT INTO exames (id,exame,medico,cpf_medico,paciente,cpf_cliente,data,horario) VALUES ('${id}','${exame}','${medico}','${cpf_medico}','${paciente}','${cpf_cliente}','${data}', '${horario}')`
@@ -865,11 +868,11 @@ app.post('/marcar_exames/', (req, res) => {
 //rota de busca (buscando) que envia para view exame.handlebars
 app.post('/buscando/', (req, res) => {
     const id = req.body.id
-    
+
     const sql = `SELECT * FROM exames WHERE id = ${id}`
 
-    conn.query(sql, function(err, data){
-        if(err){
+    conn.query(sql, function (err, data) {
+        if (err) {
             console.log(err)
             return
         }
@@ -882,8 +885,8 @@ app.post('/buscando/', (req, res) => {
 //consultar dados (busca todos os exames)
 app.get('/exames/', (req, res) => {
     const sql = 'SELECT * FROM exames'
-    
-    conn.query(sql, function (err, data){
+
+    conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
             return
@@ -899,13 +902,13 @@ app.get('/exames/', (req, res) => {
 //consultar pelo id um exame marcado (exame.handlebars)
 app.get('/exames/:id', (req, res) => {
     const id = req.params.id
-    
+
     const sql = `SELECT * FROM exames WHERE id = ${id}`
 
-    conn.query(sql, function (err, data){
+    conn.query(sql, function (err, data) {
         if (err) {
-        console.log(err)
-        return
+            console.log(err)
+            return
         }
         const listarexames = data[0]
         res.render('exame', { layout: false, listarexames })
@@ -917,10 +920,10 @@ app.get('/exames/edit_exames/:id', (req, res) => {
     const id = req.params.id
     const sql = `SELECT * FROM exames WHERE id = ${id}`
 
-    conn.query(sql, function (err, data){
+    conn.query(sql, function (err, data) {
         if (err) {
-        console.log(err)
-        return
+            console.log(err)
+            return
         }
         const editarexame = data[0]
         res.render('edit_exames', { layout: false, editarexame })
@@ -937,11 +940,11 @@ app.post('/upexame', (req, res) => {
     const cpf_cliente = req.body.cpf_cliente
     const data = req.body.data
     const horario = req.body.horario
-    
-    
-    
+
+
+
     const sql = `UPDATE exames SET exame = '${exame}', medico = '${medico}', cpf_medico ='${cpf_medico}', paciente = '${paciente}', cpf_cliente = '${cpf_cliente}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
-    
+
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
@@ -963,7 +966,8 @@ app.get('/exames/remove/:id', (req, res) => {
             console.log(err)
             return
         }
-    res.redirect('/exames')})
+        res.redirect('/exames')
+    })
     console.log("Deletado com sucesso!")
 })
 //Fim da parte dos exames (Maiara)
@@ -975,17 +979,18 @@ app.get('/remove/:id', (req, res) => {
         if (err) {
             console.log(err)
             return
-        }res.redirect(req.get('referer'));
-})})
+        } res.redirect(req.get('referer'));
+    })
+})
 
 app.get('/editarC/:id', (req, res) => {
     const id = req.params.id
     const sql = `SELECT * FROM consulta WHERE id = ${id}`
 
-    conn.query(sql, function (err, data){
+    conn.query(sql, function (err, data) {
         if (err) {
-        console.log(err)
-        return
+            console.log(err)
+            return
         }
         const editarconsulta = data[0]
         res.render('editarConsulta', { layout: false, editarconsulta })
@@ -997,11 +1002,11 @@ app.post('/editarC', (req, res) => {
     const clientesobre = req.body.clientesobre
     const data = req.body.data
     const horario = req.body.horario
-    
-    
-    
+
+
+
     const sql = `UPDATE consulta SET  cliente = '${cliente}', clientesobre ='${clientesobre}', data = '${data}', horario = '${horario}' WHERE id = '${id}'`
-    
+
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
@@ -1023,31 +1028,25 @@ app.use(function (req, res, next) {
 
 
 // conexão bd
-const conn = mysql.createConnection({
-    host: '127.0.0.1',
-    port: '3306',
-    user: 'root',
-    password: '',
-    database: 'clinica_resilia'
-})
+// const conn = mysql.createConnection({            ANTIGO BANCO DE DADOS LOCAL DESATIVADO
+//     host: '127.0.0.1',
+//     port: '3306',
+//     user: 'root',
+//     password: '',
+//     database: 'clinica_resilia'
+// })
 
-conn.connect(function (err) {
-    if (err) {
-        console.log(err);
-    }
+// conn.connect(function (err) {                    ANTIGO BANCO DE DADOS LOCAL DESATIVADO
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log('Conectado com sucesso');
+// })
 
-    console.log('Conectado com sucesso');
-})
+const conn = mysql.createConnection(process.env.DATABASE_URL)              // NOVO BANCO DE DADOS ONLINE NO PlanetScale
+console.log('Connected to PlanetScale!')              // NOVO BANCO DE DADOS ONLINE NO PlanetScale
+
 
 app.listen(port, () => {
     console.log(`app rodando na porta ${port}`);
-
-
-
-
-
-
-    //lembrar que toda vez que algum registro por deletado, o auto incremento vai continuar seguindo com a numeração, por conta de "registro vazio"
-    //Para retornar a ordem correta da numeração do id, basta excluir e criar novamente, ele ira "resetar a contagem"
-    
 })

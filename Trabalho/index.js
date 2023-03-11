@@ -1047,6 +1047,6 @@ const conn = mysql.createConnection(process.env.DATABASE_URL)              // NO
 console.log('Connected to PlanetScale!')              // NOVO BANCO DE DADOS ONLINE NO PlanetScale
 
 
-app.listen(port, () => {
+app.listen(process.env.port || port, () => {
     console.log(`app rodando na porta ${port}`);
 })

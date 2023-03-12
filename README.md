@@ -11,7 +11,9 @@ Digite **npm install dotenv mysql2** para instalar o MySQL. (Este comando é uti
 Digite **npm install handlebars** para instalar o Handlebars.  <br/>
 Digite **npm install --save-dev nodemon** para instalar o nodemon.  <br/>
 Agora para rodar o servidor digite **npm run start**.  <br/>
-Pronto! Agora só acessar **http://localhost:4000** pelo navegador.  <br/>
+Pronto! Agora só acessar **http://localhost:4000** pelo navegador.  <br/><br/>
+
+Ou veja online clicando neste link: https://clinica-vitallis.onrender.com
 
 
 ## **Sobre o site 💊**
